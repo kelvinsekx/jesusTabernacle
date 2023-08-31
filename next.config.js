@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -10,6 +12,9 @@ const nextConfig = {
         pathname: "/dfliypjzt/**",
       },
     ],
+  },
+  env: {
+    rawJsFromFile: fs.readFileSync("./rawgoogleapi.js").toString(),
   },
 };
 

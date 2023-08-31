@@ -1,4 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+calendar-events-sample-b928fc14dd6c.json
+credentials.json
 
 # dependencies
 /node_modules
