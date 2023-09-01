@@ -54,9 +54,8 @@ const Content = () => (
       how you can be a part of our journey.
     </p>
     <p>
-      Our Mission: At Jesus Tabernacle, our mission is to briefly describe your
-      church's main mission or purpose, such as fostering spiritual growth,
-      community engagement, or spreading love and compassion.
+      {`Our Mission: At Jesus Tabernacle, our mission is to briefly describe your church's main mission or purpose, such as fostering spiritual growth,
+      community engagement, or spreading love and compassion.`}
     </p>
     <p>
       Our Beliefs: We are a erer-affiliated church that embraces the core tenets
