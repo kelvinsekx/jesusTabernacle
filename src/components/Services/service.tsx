@@ -1,52 +1,13 @@
 import * as React from "react";
+import {getUpComingEvents} from "@/components/getUpComingEvents"
 
 import { Container } from "../container";
 import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 
-// GOOGLE CALENDER
-import { google } from "googleapis";
-
-const CREDENTIALS = JSON.parse(
-  process.env.NEXT_PUBLIC_CALENDAR_CREDENTIALS as string
-);
-const calendarId = process.env.NEXT_PUBLIC_CALENDAR_ID;
-
-const SCOPES = "https://www.googleapis.com/auth/calendar";
-const calendar = google.calendar({
-  version: "v3",
-});
-
-const auth = new google.auth.JWT(
-  CREDENTIALS.client_email,
-  null,
-  CREDENTIALS.private_key,
-  SCOPES
-);
-
 export const Services = async () => {
-  let events = [];
-  try {
-    const res = await calendar.events.list({
-      auth,
-      calendarId,
-      timeMin: new Date().toISOString(),
-      showDeleted: false,
-      singleEvents: true,
-      maxResults: 10,
-      orderBy: "startTime",
-    });
-    if (res["status"] == 200) {
-      const option = res.data.items && res.data.items[0];
-      events = res.data.items;
-    } else {
-      console.log("hell");
-    }
-  } catch (err) {
-    console.log({ eventlisterr: err });
-  }
-
+  const events = await getUpComingEvents()
   return (
     <div
       style={{
