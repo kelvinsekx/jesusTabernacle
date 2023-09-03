@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require("fs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,10 +11,11 @@ const nextConfig = {
         port: "",
         pathname: "/dfliypjzt/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
     ],
-  },
-  env: {
-    rawJsFromFile: fs.readFileSync("./rawgoogleapi.js").toString(),
   },
 };
 

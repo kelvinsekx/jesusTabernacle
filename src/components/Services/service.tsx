@@ -39,14 +39,12 @@ export const Services = async () => {
     });
     if (res["status"] == 200) {
       const option = res.data.items && res.data.items[0];
-      // console.log(res.data);
-      // console.log({ summary: option?.summary });
       events = res.data.items;
     } else {
       console.log("hell");
     }
   } catch (err) {
-    console.log({ err });
+    console.log({ eventlisterr: err });
   }
 
   return (
@@ -80,7 +78,7 @@ export const Services = async () => {
                     {event.summary}
                   </div>
                   <div className="text-base">{month}</div>
-                  {/* <Reminder /> */}
+                  <Reminder event={event} />
                 </div>
               );
             })

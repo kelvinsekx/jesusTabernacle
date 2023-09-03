@@ -29,8 +29,7 @@ export function convertDateString(dateString: string): string[] {
   const formattedDate = date.toLocaleString("en-US", options);
 
   // Extract day, month, and time from the formatted date
-  const [day, month, time] = formattedDate.split(', ');
+  const [day, month, time] = formattedDate.split(", ");
 
   return [day, month, time];
 }
-
