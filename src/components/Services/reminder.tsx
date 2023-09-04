@@ -47,7 +47,7 @@ export const Reminder = ({event}: {event: any}) => {
   // second useEffect
 
   React.useEffect(() => {
-    let tokenClient;
+    let tokenClient:any;
     let gisInited = false;
     /**
      * Callback after Google Identity Services are loaded.
@@ -80,7 +80,7 @@ export const Reminder = ({event}: {event: any}) => {
    *  Sign in the user upon button click.
    */
   function handleAuth() {
-    tokenClient?.callback = async (resp) => {
+    tokenClient.callback = async (resp) => {
       if (resp.error !== undefined) {
         throw resp;
       }
