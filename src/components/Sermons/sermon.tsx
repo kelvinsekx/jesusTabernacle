@@ -12,8 +12,8 @@ const builder = imageUrlBuilder(client);
 
 export default function Post({ sermon }: { sermon: SanityDocument }) {
   return (
-    <main className="container mx-auto prose prose-lg p-4">
-      <h1>{sermon.title}</h1>
+    <main className="max-w-4xl mx-auto prose prose-lg p-4">
+      <h1 className='text-5xl pb-4 md:pb-8 font-black'>{sermon.title}</h1>
       {sermon?.mainImage ? (
         <Image
           className="float-left m-0 w-1/3 mr-4 rounded-lg"
