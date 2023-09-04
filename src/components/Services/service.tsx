@@ -40,7 +40,7 @@ type TEvent = {
 }
 
 export const Services = async () => {
-  let events: TEvent[] = await getUpComingEvents()
+  let events = await getUpComingEvents()
   events = events || []
   return (
     <div
@@ -64,7 +64,7 @@ export const Services = async () => {
           ) : (
             events.map((event, index) => {
               const [day, month, time] = convertDateString(
-                event?.start?.dateTime
+                (event?.start?.dateTime as Date)
               );
               return (
                 <div className="40rem flex flex-col items-center" key={index}>
