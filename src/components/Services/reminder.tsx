@@ -89,7 +89,7 @@ export const Reminder = ({event}: {event: any}) => {
       await insert();
     };
 
-    if (gapi.client.getToken() === null) {
+    if (window.gapi.client.getToken() === null) {
       // Prompt the user to select a Google Account and ask for consent to share their data
       // when establishing a new session.
       tokenClient.requestAccessToken({ prompt: "consent" });
