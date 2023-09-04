@@ -26,6 +26,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: any }) {
-  const sermon = await client.fetch(postQuery);
+  const queryParams = { slug: params?.slug ?? `` };
+
+  const sermon = await client.fetch(postQuery, queryParams);
   return <Sermon sermon={sermon} />;
 }

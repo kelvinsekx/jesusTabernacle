@@ -15,7 +15,8 @@ import { client } from "@/lib/sanity.client";
 
 const query = groq`*[_type =="post" && defined(slug.current)]{
   _id,
-  title
+  title,
+  slug
 }`;
 
 export default async function Home() {

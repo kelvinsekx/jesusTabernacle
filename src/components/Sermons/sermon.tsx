@@ -6,7 +6,7 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityDocument } from "@sanity/client";
 import { PortableText } from "@portabletext/react";
-import { client } from "../../../sanity/lib/client";
+import { client } from "../../lib/sanity.client";
 
 const builder = imageUrlBuilder(client);
 

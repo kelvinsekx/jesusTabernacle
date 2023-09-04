@@ -13,7 +13,7 @@ export default function WorshipLive() {
           <p className="text-base" id="gallery">
          Experience the word and worship together online with our live church service
           </p>
-          <a href="https://google.com" className='mt-4 border-2 border-red-400 flex gap-2 bg-tb-green p-2 rounded'>
+          <a href="https://google.com" className='mt-4 flex gap-2 bg-tb-green p-2 rounded'>
             <span>Join Live Service</span>
             <Video />
           </a>
