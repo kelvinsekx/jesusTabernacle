@@ -80,7 +80,7 @@ export const Reminder = ({event}: {event: any}) => {
    *  Sign in the user upon button click.
    */
   function handleAuth() {
-    (tokenClient as any).callback = async (resp) => {
+    (tokenClient as any).callback = async (resp: {error: any}) => {
       if (resp.error !== undefined) {
         throw resp;
       }
