@@ -9,21 +9,7 @@ import WorshipLive from "@/components/worshipLive";
 import Posters from "@/components/Layouts/posters";
 import LatestSermo from "@/components/Sermons/latestSermon";
 
-import { groq } from "next-sanity";
-import type { SanityDocument } from "next-sanity";
-import { client } from "@/lib/sanity.client";
-import { sanityFetch } from '@/lib/sanityFetch'
-
-const query = groq`*[_type =="post" && defined(slug.current)]{
-  _id,
-  title,
-  slug,
-  body
-}`;
-
 export default async function Home() {
-  const sermons = await sanityFetch<SanityDocument[]>({ query: query });
-  // console.log(sermons);
   return (
     <div className="text-base/[22px] text-tb-grey2">
       <Navigation />
@@ -32,7 +18,7 @@ export default async function Home() {
       <WorshipLive />
       <Gallery />
       <Services />
-      <LatestSermo sermons={sermons} />
+      <LatestSermo />
       <LocateUs />
       <Footer />
     </div>
