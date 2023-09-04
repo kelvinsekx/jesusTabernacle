@@ -3,7 +3,7 @@ import type { SanityDocument } from "@sanity/client";
 import Link from "next/link";
 
 const LatestSermo = ({ sermons = [] }: { sermons: SanityDocument[] }) => {
-  console.log({latestSermon: sermons});
+  console.log({ latestSermon: sermons });
   return (
     <div
       style={{

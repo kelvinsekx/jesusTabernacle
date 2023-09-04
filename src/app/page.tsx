@@ -12,7 +12,7 @@ import LatestSermo from "@/components/Sermons/latestSermon";
 import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity.client";
-import { sanityFetch } from '@/lib/sanityFetch'
+import { sanityFetch } from "@/lib/sanityFetch";
 
 const query = groq`*[_type =="post" && defined(slug.current)]{
   _id,

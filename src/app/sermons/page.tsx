@@ -24,7 +24,11 @@ export default async function Home() {
   console.log(sermons);
   return (
     <div className="text-base/[22px] text-tb-grey2">
-      {sermons.map((sermon, index)=> <Link to={sermon.slug.current}>{sermon.title}</Link>)}
+      {sermons.map((sermon, index) => (
+        <Link key={index} href={sermon.slug.current}>
+          {sermon.title}
+        </Link>
+      ))}
     </div>
   );
 }
