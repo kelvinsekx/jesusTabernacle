@@ -8,6 +8,7 @@ import { Reminder } from "./reminder";
 
 export const Services = async () => {
   const events = await getUpComingEvents()
+
   return (
     <div
       style={{
@@ -25,7 +26,7 @@ export const Services = async () => {
           </p>
         </div>
         <div className="flex gap-4 justify-center items-center">
-          {events.length < 1 ? (
+          {(events.length < 1 || !events) ? (
             <p>No Recent Events</p>
           ) : (
             events.map((event, index) => {
