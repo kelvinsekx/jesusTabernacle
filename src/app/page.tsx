@@ -3,18 +3,24 @@ import { Navigation } from "../components/Navigation/navigation";
 import { Gallery } from "@/components/Gallery/gallery";
 import { Services } from "@/components/Services/service";
 import WelcomeToChurch from "@/components/Layouts/welcomeToChurch";
-import {LocateUs} from '@/components/LocateUs/locateus'
+import { LocateUs } from "@/components/LocateUs/locateus";
 
-import WorshipLive from '@/components/worshipLive'
+import WorshipLive from "@/components/worshipLive";
 import Posters from "@/components/Layouts/posters";
 import LatestSermo from "@/components/Sermons/latestSermon";
 
-import { SanityDocument } from "next-sanity";
-import { postsQuery } from "../../sanity/lib/queries";
-import { sanityFetch } from "../../sanity/lib/sanityFetch";
+import { groq } from "next-sanity";
+import type { SanityDocument } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+
+const query = groq`*[_type =="post" && defined(slug.current)]{
+  _id,
+  title
+}`;
 
 export default async function Home() {
-  const sermons = await sanityFetch<SanityDocument[]>({ query: postsQuery });  
+  const sermons = await client.fetch(query);
+  console.log(sermons);
   return (
     <div className="text-base/[22px] text-tb-grey2">
       <Navigation />

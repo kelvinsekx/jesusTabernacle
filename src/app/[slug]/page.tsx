@@ -1,11 +1,21 @@
-
 // ./nextjs-app/app/[slug]/page.tsx
 
-import { SanityDocument } from "@sanity/client";
 import Sermon from "@/components/Sermons/sermon";
-import { postPathsQuery, postQuery } from "../../../sanity/lib/queries";
-import { sanityFetch } from "../../../sanity/lib/sanityFetch";
-import { client } from "../../../sanity/lib/client";
+
+import { groq } from "next-sanity";
+import type { SanityDocument } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+
+// Get all post slugs
+export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }`;
+
+export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  mainImage,
+  body
+}`;
 
 // Prepare Next.js to know which routes already exist
 export async function generateStaticParams() {
@@ -16,7 +26,6 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: any }) {
-  const sermon = await sanityFetch<SanityDocument>({ query: postQuery, params });
-
+  const sermon = await client.fetch(postQuery);
   return <Sermon sermon={sermon} />;
 }

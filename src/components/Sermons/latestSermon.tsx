@@ -1,8 +1,9 @@
 import { Container } from "@/components/container";
 import type { SanityDocument } from "@sanity/client";
+import Link from "next/link";
 
-const LatestSermo = ({sermons = []}: {sermons: SanityDocument[]}) => {
-  console.log(sermons)
+const LatestSermo = ({ sermons = [] }: { sermons: SanityDocument[] }) => {
+  console.log(sermons);
   return (
     <div
       style={{
@@ -19,20 +20,20 @@ const LatestSermo = ({sermons = []}: {sermons: SanityDocument[]}) => {
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-y-4 justify-between">
-          {sermons.map((sermon, index)=> <SermonList key={index} sermon={sermon} />)}     
+          {sermons.map((sermon, index) => (
+            <Link
+              key={index}
+              href={sermon.slug.current}
+              className="border-2 border-tb-grey6 w-[40%] p-4"
+            >
+              <p className="font-medium text-lg">{sermon.title}</p>
+              <small className="text-tb-grey3">Date: 28/08/23</small>
+            </Link>
+          ))}
         </div>
       </Container>
     </div>
   );
 };
-
-const SermonList = ({sermon}: {sermon: {title: string; _id: string}}) => (
-      <div className="border-2 border-tb-grey6 w-[40%] p-4">
-        <p className="font-medium text-lg">
-          {sermon.title}
-        </p>
-        <small className="text-tb-grey3">Date: 28/08/23</small>
-      </div>
-);
 
 export default LatestSermo;
