@@ -6,12 +6,8 @@ import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
-// Get all post slugs
-export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
-    "params": { "slug": slug.current }
-  }`;
 
-export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   mainImage,
   body
