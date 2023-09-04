@@ -17,7 +17,7 @@ const calendar = google.calendar({
 
 const auth = new google.auth.JWT(
   CREDENTIALS.client_email,
-  null as string,
+  '',
   CREDENTIALS.private_key,
   SCOPES
 );
