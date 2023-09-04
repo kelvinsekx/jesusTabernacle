@@ -106,7 +106,7 @@ export const Reminder = ({event}: {event: any}) => {
         calendarId: "primary",
         resource: event,
       },
-      function (err, event) {
+      function (err: string, event: {htmlLink: string}) {
         if (err) {
           console.log(
             "There was an error contacting the Calendar service: " + err
