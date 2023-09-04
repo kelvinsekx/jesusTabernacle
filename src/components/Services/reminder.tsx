@@ -19,14 +19,14 @@ export const Reminder = ({event}: {event: any}) => {
 
   React.useEffect(() => {
     async function initializeGapiClient() {
-      await window.gapi.client.init({
+      await (window as any).gapi.client.init({
         apiKey: API_KEY,
         discoveryDocs: [DISCOVERY_DOC],
       });
     }
 
     function gapiLoaded() {
-      window.gapi.load("client", initializeGapiClient);
+      (window as any).gapi.load("client", initializeGapiClient);
     }
 
     // embed gapi script
@@ -53,7 +53,7 @@ export const Reminder = ({event}: {event: any}) => {
      * Callback after Google Identity Services are loaded.
      */
     function gisLoaded() {
-      tokenClient = window.google.accounts.oauth2.initTokenClient({
+      tokenClient = (window as any).google.accounts.oauth2.initTokenClient({
         client_id: CLIENT_ID,
         scope: SCOPES,
         callback: "", // defined later
