@@ -1,7 +1,7 @@
 export const random = <T extends { length: number }>(item: T) =>
   Math.floor(Math.random() * item.length);
 
-export function getSrcSets(constraints: Date) {
+export function getSrcSets(constraints: string) {
   const meters = [256, 512, 768, 1024, 1280];
   constraints = constraints + " ";
   let newconstraints = constraints.repeat(5).trim().split(" ");
@@ -14,7 +14,7 @@ export function getSrcSets(constraints: Date) {
   return newconstraints.join(", ");
 }
 
-export function convertDateString(dateString: string): string[] {
+export function convertDateString(dateString: Date): string[] {
   const date = new Date(dateString);
 
   const options: Intl.DateTimeFormatOptions = {
