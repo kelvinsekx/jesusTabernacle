@@ -6,8 +6,42 @@ import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 
+type TEvent = {
+  "id": string,
+  "status": string,
+  "htmlLink": string,
+  "created": Date,
+  "updated": Date,
+  "summary": string,
+  "description": string,
+  "location": string,
+  "colorId": string,
+  "start": {
+    "date": Date,
+    "dateTime": Date,
+    "timeZone": string
+  },
+  "end": {
+    "date": string,
+    "dateTime": Date,
+    "timeZone": string
+  },
+  "recurringEventId": string,
+  "transparency": string,
+  "visibility": string,
+  "iCalUID": string,
+  "sequence": integer,
+  "hangoutLink": string,
+  
+  "source": {
+    "url": string,
+    "title": string
+  },
+  "eventType": string
+}
+
 export const Services = async () => {
-  let events = await getUpComingEvents()
+  let events: TEvent[] = await getUpComingEvents()
   events = events || []
   return (
     <div
