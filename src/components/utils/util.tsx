@@ -1,7 +1,7 @@
 export const random = <T extends { length: number }>(item: T) =>
   Math.floor(Math.random() * item.length);
 
-export function getSrcSets(constraints: string) {
+export function getSrcSets(constraints: Date) {
   const meters = [256, 512, 768, 1024, 1280];
   constraints = constraints + " ";
   let newconstraints = constraints.repeat(5).trim().split(" ");
