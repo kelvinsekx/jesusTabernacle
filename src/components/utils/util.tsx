@@ -14,7 +14,7 @@ export function getSrcSets(constraints: string) {
   return newconstraints.join(", ");
 }
 
-export function convertDateString(dateString: Date): string[] {
+export function convertDateString(dateString: string): string[] {
   const date = new Date(dateString);
 
   const options: Intl.DateTimeFormatOptions = {

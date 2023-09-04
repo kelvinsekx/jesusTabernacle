@@ -64,7 +64,7 @@ export const Services = async () => {
           ) : (
             events.map((event, index) => {
               const [day, month, time] = convertDateString(
-                (event?.start?.dateTime as Date)
+                (event?.start?.dateTime as string)
               );
               return (
                 <div className="40rem flex flex-col items-center" key={index}>
