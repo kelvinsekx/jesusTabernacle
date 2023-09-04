@@ -7,8 +7,8 @@ import { convertDateString } from "../utils/util";
 import { Reminder } from "./reminder";
 
 export const Services = async () => {
-  const events = await getUpComingEvents()
-
+  let events = await getUpComingEvents()
+  events = events || []
   return (
     <div
       style={{
@@ -26,7 +26,7 @@ export const Services = async () => {
           </p>
         </div>
         <div className="flex gap-4 justify-center items-center">
-          {(events.length < 1 || !events) ? (
+          {(events.length < 1 ) ? (
             <p>No Recent Events</p>
           ) : (
             events.map((event, index) => {
