@@ -1,8 +1,30 @@
+"use client";
+import * as React from "react";
 import { Container } from "@/components/container";
-import type { SanityDocument } from "@sanity/client";
 import Link from "next/link";
 
-const LatestSermo = ({ sermons = [] }: { sermons: SanityDocument[] }) => {
+import { groq } from "next-sanity";
+import type { SanityDocument } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+import { sanityFetch } from "@/lib/sanityFetch";
+
+const query = groq`*[_type =="post" && defined(slug.current)]{
+  _id,
+  title,
+  slug,
+  body
+}`;
+
+const LatestSermo = () => {
+  const [sermons, setSermons] = React.useState<SanityDocument[]>([]);
+  React.useEffect(() => {
+    const fetchSermons = async () => {
+      const Sermons = await client.fetch(query);
+      setSermons(Sermons);
+    };
+    fetchSermons();
+  }, []);
+
   console.log({ latestSermon: sermons });
   return (
     <div

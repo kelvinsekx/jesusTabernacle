@@ -6,8 +6,42 @@ import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 
+type TEvent = {
+  "id": string,
+  "status": string,
+  "htmlLink": string,
+  "created": Date,
+  "updated": Date,
+  "summary": string,
+  "description": string,
+  "location": string,
+  "colorId": string,
+  "start": {
+    "date": Date,
+    "dateTime": Date,
+    "timeZone": string
+  },
+  "end": {
+    "date": string,
+    "dateTime": Date,
+    "timeZone": string
+  },
+  "recurringEventId": string,
+  "transparency": string,
+  "visibility": string,
+  "iCalUID": string,
+  "hangoutLink": string,
+  
+  "source": {
+    "url": string,
+    "title": string
+  },
+  "eventType": string
+}
+
 export const Services = async () => {
-  const events = await getUpComingEvents()
+  let events = await getUpComingEvents()
+  events = events || []
   return (
     <div
       style={{
@@ -25,12 +59,12 @@ export const Services = async () => {
           </p>
         </div>
         <div className="flex gap-4 justify-center items-center">
-          {events.length < 1 ? (
+          {(events.length < 1 ) ? (
             <p>No Recent Events</p>
           ) : (
             events.map((event, index) => {
               const [day, month, time] = convertDateString(
-                event?.start?.dateTime
+                (event?.start?.dateTime as string)
               );
               return (
                 <div className="40rem flex flex-col items-center" key={index}>

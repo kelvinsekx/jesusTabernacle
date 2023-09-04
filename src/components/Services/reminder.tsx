@@ -19,14 +19,14 @@ export const Reminder = ({event}: {event: any}) => {
 
   React.useEffect(() => {
     async function initializeGapiClient() {
-      await window.gapi.client.init({
+      await (window as any).gapi.client.init({
         apiKey: API_KEY,
         discoveryDocs: [DISCOVERY_DOC],
       });
     }
 
     function gapiLoaded() {
-      window.gapi.load("client", initializeGapiClient);
+      (window as any).gapi.load("client", initializeGapiClient);
     }
 
     // embed gapi script
@@ -47,13 +47,13 @@ export const Reminder = ({event}: {event: any}) => {
   // second useEffect
 
   React.useEffect(() => {
-    let tokenClient;
+    let tokenClient:any;
     let gisInited = false;
     /**
      * Callback after Google Identity Services are loaded.
      */
     function gisLoaded() {
-      tokenClient = window.google.accounts.oauth2.initTokenClient({
+      tokenClient = (window as any).google.accounts.oauth2.initTokenClient({
         client_id: CLIENT_ID,
         scope: SCOPES,
         callback: "", // defined later
@@ -80,7 +80,7 @@ export const Reminder = ({event}: {event: any}) => {
    *  Sign in the user upon button click.
    */
   function handleAuth() {
-    tokenClient.callback = async (resp) => {
+    (tokenClient as any).callback = async (resp: {error: any}) => {
       if (resp.error !== undefined) {
         throw resp;
       }
@@ -89,24 +89,24 @@ export const Reminder = ({event}: {event: any}) => {
       await insert();
     };
 
-    if (gapi.client.getToken() === null) {
+    if ((window as any).gapi.client.getToken() === null) {
       // Prompt the user to select a Google Account and ask for consent to share their data
       // when establishing a new session.
-      tokenClient.requestAccessToken({ prompt: "consent" });
+      (tokenClient as any).requestAccessToken({ prompt: "consent" });
     } else {
       // Skip display of account chooser and consent dialog for an existing session.
-      tokenClient.requestAccessToken({ prompt: "" });
+      (tokenClient as any).requestAccessToken({ prompt: "" });
     }
   }
 
   async function insert() {
 
-    await window.gapi.client.calendar.events.insert(
+    await (window as any).gapi.client.calendar.events.insert(
       {
         calendarId: "primary",
         resource: event,
       },
-      function (err, event) {
+      function (err: string, event: {htmlLink: string}) {
         if (err) {
           console.log(
             "There was an error contacting the Calendar service: " + err
