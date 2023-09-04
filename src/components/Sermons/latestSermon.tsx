@@ -1,7 +1,6 @@
 'use client'
 import * as React from 'react';
 import { Container } from "@/components/container";
-import type { SanityDocument } from "@sanity/client";
 import Link from "next/link";
 
 
