@@ -30,7 +30,6 @@ type TEvent = {
   "transparency": string,
   "visibility": string,
   "iCalUID": string,
-  "sequence": integer,
   "hangoutLink": string,
   
   "source": {
