@@ -58,7 +58,7 @@ export const Services = async () => {
             Friday. They are designed to help different aspects of our life
           </p>
         </div>
-        <div className="flex gap-4 justify-center items-center">
+        <div className="flex flex-wrap gap-4 justify-center items-center">
           {(events.length < 1 ) ? (
             <p>No Recent Events</p>
           ) : (
