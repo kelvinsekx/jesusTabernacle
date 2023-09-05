@@ -7,12 +7,14 @@ import { LocateUs } from "@/components/LocateUs/locateus";
 
 import WorshipLive from "@/components/worshipLive";
 import Posters from "@/components/Layouts/posters";
+import Carousel from '@/components/Layouts/carousel'
 import LatestSermo from "@/components/Sermons/latestSermon";
 
 export default async function Home() {
   return (
     <div className="text-base/[22px] text-tb-grey2">
       <Navigation />
+      <Carousel />
       <WelcomeToChurch />
       <Posters />
       <WorshipLive />
