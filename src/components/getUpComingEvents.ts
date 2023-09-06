@@ -29,7 +29,7 @@ export const getUpComingEvents = cache(async () => {
       timeMin: new Date().toISOString(),
       showDeleted: false,
       singleEvents: true,
-      maxResults: 10,
+      maxResults: 7,
       orderBy: "startTime",
     });
     return res.data.items;

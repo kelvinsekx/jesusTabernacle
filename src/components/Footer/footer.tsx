@@ -10,7 +10,7 @@ import {
 export const Footer = () => {
   return (
     <div className="flex gap-x-24 p-17.5 bg-tb-green text-white text-base items-center">
-      <div className="w-44 h-32 relative">
+      <div className="w-32 h-32 relative">
         <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
       </div>
       <div className="flex justify-between ">
@@ -25,8 +25,7 @@ export const Footer = () => {
         <section className="w-1/3">
           <Footer.Header>Locate Us</Footer.Header>
           <p>
-            Trinity Towers,Chief Yesufu Abiodun Way, Oniru Industrial
-            Estate,Maroko, Victoria Island ExtensionLagos, Nigeria.
+            Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705
           </p>
         </section>
         <section className="w-1/3">
@@ -47,10 +46,10 @@ export const Footer = () => {
           </div>
           <p className="pb-6">
             <span className="text-sm">Phone: </span>
-            +234 900 0000 007, +234 900 0000 007
+            (919) 641-3832
           </p>
           <p>
-            <span className="text-sm">Email: </span>church@church.com
+            <span className="text-sm">Email: </span>rccgnajesustabernacle@gmail.com
           </p>
         </section>
       </div>
