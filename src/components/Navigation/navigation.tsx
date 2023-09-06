@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link'
 import { Container } from "@/components/container";
+import { GiveDialog } from "../GiveDialog/dialog";
 
 export const Navigation = () => {
   return (
@@ -11,18 +12,18 @@ export const Navigation = () => {
         </div>
         <ul className="flex justify-between items-center w-2/3 gap-2 h-20">
           {navlist.map((item, index) => {
-            const cond = item.title.toLowerCase() == "give";
             return (
               <li
                 key={index}
-                className={`${
-                  cond ? "bg-tb-black text-white" : ""
-                } h-full flex items-center px-1 cursor-pointer`}
+                className={`h-full flex items-center px-1 cursor-pointer`}
               >
-                <Link href={item.slug}>{cond ? "GIVE" : item.title.toUpperCase()}</Link>
+                <Link href={item.slug}>{item.title.toUpperCase()}</Link>
               </li>
             );
           })}
+          <li>
+            <GiveDialog />
+          </li>
         </ul>
       </div>
     </Container>
@@ -35,6 +36,5 @@ const navlist = [
  {slug:'/', title:"Events"},
  {slug:'/', title:"Sermon"},
  {slug:'/', title:"Gallery"},
- {slug:'/contact-us', title:"Contact Us"},
- {slug:'/', title:"Give"}
+ {slug:'/contact-us', title:"Contact Us"}
 ];
