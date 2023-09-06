@@ -15,13 +15,13 @@ export const Navigation = () => {
             return (
               <li
                 key={index}
-                className={`h-full flex items-center px-1 cursor-pointer`}
+                className={`h-full flex items-center px-2 cursor-pointer`}
               >
                 <Link href={item.slug}>{item.title.toUpperCase()}</Link>
               </li>
             );
           })}
-          <li className="h-full cursor-pointer">
+          <li className="h-full cursor-pointer px-2">
             <GiveDialog />
           </li>
         </ul>
