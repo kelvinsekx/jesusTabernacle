@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { CheckIcon } from "lucide-react"
 
 export function GiveDialog() {
   return (
@@ -21,11 +22,14 @@ export function GiveDialog() {
         <DialogHeader>
           <DialogTitle className="text-black text-4.5xl pb-2 ">Make a Donation</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 text-tb-ash text-base">
           <div>
             <div>What would you like to give for?</div>
-            <div>
-                <div>Offering</div>
+            <div className="flex w-36 h-10">
+                <div className="w-full h-full flex items-center justify-center bg-tb-ash/30">
+                  <span>Offering</span>
+                </div>
+                <CheckIcon />
             </div>
           </div>
           <div></div>

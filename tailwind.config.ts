@@ -36,6 +36,7 @@ const config: Config = {
         "tb-grey3": "#828282",
         "tb-grey6": "#F2F2F2",
         "tb-gold": "#FFBF00",
+        "tb-ash": "#6B7280",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

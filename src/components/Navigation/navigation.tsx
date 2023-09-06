@@ -21,7 +21,7 @@ export const Navigation = () => {
               </li>
             );
           })}
-          <li className="h-full">
+          <li className="h-full cursor-pointer">
             <GiveDialog />
           </li>
         </ul>
