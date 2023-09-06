@@ -44,7 +44,7 @@ export function GiveDialog() {
                 <div className="w-full h-full flex items-center justify-center border-2 hover:border-tb-green">
                   <span>Cashapp</span>
                 </div>
-                <span className="h-4 w-4 border-2 border-tb-green rounded-full"><CheckIcon className="text-white w-4 h-4" /></span>
+                <span className="hidden hover:block h-4 w-4 border-2 bg-tb-green rounded-full flex items-center justify-center relative bottom-2"><CheckIcon className="text-white w-4 h-4" /></span>
             </div>
             <div className="flex w-36 h-10">
                 <div className="w-full h-full flex items-center justify-center border-2 hover:border-tb-green">
