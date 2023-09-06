@@ -1,6 +1,6 @@
-
-import {YoutubeIcon, InstagramIcon, MapPinIcon, MailIcon} from 'lucide-react'
 import React from 'react'
+import {YoutubeIcon, InstagramIcon, MapPinIcon, MailIcon} from 'lucide-react'
+import {ContactForm} from '@/components/ContactForm/form'
 
 const ContactUs = ()=> {
     return <div>
@@ -12,6 +12,7 @@ const ContactUs = ()=> {
                 <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />
                 <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
             </div>
+            <ContactForm />
         </div>
         <div></div>
     </div>

@@ -1,6 +1,6 @@
 
 import { Gallery } from "@/components/Gallery/gallery";
-import { Services } from "@/components/Services/service";
+// import { Services } from "@/components/Services/service";
 import WelcomeToChurch from "@/components/Layouts/welcomeToChurch";
 import { LocateUs } from "@/components/LocateUs/locateus";
 
@@ -17,7 +17,7 @@ export default async function Home() {
       <Posters />
       <WorshipLive />
       <Gallery />
-      <Services />
+      {/* <Services /> */}
       <LatestSermo />
       <LocateUs />
     </div>

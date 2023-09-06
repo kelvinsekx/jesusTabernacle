@@ -20,7 +20,7 @@ export function GiveDialog() {
       </DialogTrigger>
       <DialogContent className="w-fit">
         <DialogHeader>
-          <DialogTitle className="text-black text-4.5xl pb-2 ">Make a Donation</DialogTitle>
+          <DialogTitle className="text-black text-4.5xl pb-2 self-center">Make a Donation</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col gap-4 text-tb-ash text-base">
           <div>
@@ -52,16 +52,17 @@ export function GiveDialog() {
                 </div>
                 <span className="h-4 w-4 border-2 bg-tb-green rounded-full flex items-center justify-center relative bottom-2"><CheckIcon className="text-white w-4 h-4" /></span>
             </div>
-            <div>
+            </div>
+            <div className="py-4">
               <p className="font-bold text-tb-grey2">Cashapp</p>
               <p>You can make payments to the account info below</p>
-              <div className="text-tb-grey2 font-medium">9196413832 -$Jesustabernacle2</div>
-            </div>
+              <div className="text-tb-grey2 font-bold">9196413832 -$Jesustabernacle2</div>
             </div>
           </div>
         </div>
+
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button>God bless you...</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

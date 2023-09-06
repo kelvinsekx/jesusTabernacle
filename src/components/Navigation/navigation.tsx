@@ -32,7 +32,7 @@ export const Navigation = () => {
 
 const navlist = [
  {slug:'/', title:'Home'},
- {slug:'/', title: "watch live service"},
+ {slug:'/live-service', title: "watch live service"},
  {slug:'/', title:"Events"},
  {slug:'/', title:"Sermon"},
  {slug:'/', title:"Gallery"},
