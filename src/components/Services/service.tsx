@@ -58,7 +58,7 @@ export const Services = async () => {
             Friday. They are designed to help different aspects of our life
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 justify-center items-center">
+        <div className="flex flex-wrap gap-10 justify-center items-center">
           {(events.length < 1 ) ? (
             <p>No Recent Events</p>
           ) : (
@@ -67,7 +67,7 @@ export const Services = async () => {
                 (event?.start?.dateTime as string)
               );
               return (
-                <div className="40rem flex flex-col items-center" key={index}>
+                <div className="40rem flex gap-2 flex-col items-center" key={index}>
                   <div className="text-2xl font-semibold pb-6">{day}</div>
                   <div className="text-2xl pb-1 text-center">
                     {event.summary}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 import { Container } from "@/components/container";
 
 export const Navigation = () => {
@@ -10,7 +11,7 @@ export const Navigation = () => {
         </div>
         <ul className="flex justify-between items-center w-2/3 gap-2 h-20">
           {navlist.map((item, index) => {
-            const cond = item.toLowerCase() == "give";
+            const cond = item.title.toLowerCase() == "give";
             return (
               <li
                 key={index}
@@ -18,7 +19,7 @@ export const Navigation = () => {
                   cond ? "bg-tb-black text-white" : ""
                 } h-full flex items-center px-1 cursor-pointer`}
               >
-                {cond ? "GIVE" : item.toUpperCase()}
+                <Link href={item.slug}>{cond ? "GIVE" : item.title.toUpperCase()}</Link>
               </li>
             );
           })}
@@ -29,11 +30,11 @@ export const Navigation = () => {
 };
 
 const navlist = [
-  "Home",
-  "watch live service",
-  "Events",
-  "Sermon",
-  "Gallery",
-  "Contact Us",
-  "Give",
+ {slug:'/', title:'Home'},
+ {slug:'/', title: "watch live service"},
+ {slug:'/', title:"Events"},
+ {slug:'/', title:"Sermon"},
+ {slug:'/', title:"Gallery"},
+ {slug:'/contact-us', title:"Contact Us"},
+ {slug:'/', title:"Give"}
 ];

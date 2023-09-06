@@ -14,7 +14,7 @@ const sources = [
 ];
 
 const Banner = ()=> {
-    return <div className="_34sdf">
+    return <div className="_34sdf max-w-7xl">
         <Banner.Carousel
           items={sources.map((src, index) => (
             <Banner.Card src={src} key={index} />
@@ -23,13 +23,13 @@ const Banner = ()=> {
       </div>
 }
 
-const Card = ({src}: {src: string})=> <div className='relative h-[20rem] w-full'>
+const Card = ({src}: {src: string})=> <div className='relative h-[38rem] w-full'>
    <Image src={src} alt='' fill className='object-fit object-center' />
 </div>
 Banner.Card = Card
 
 const Carousel = ({ items }: { items: React.ReactNode[] }) => (
-  <AliceCarousel autoHeight infinite mouseTracking items={items} />
+  <AliceCarousel animationDuration={2500} autoPlayInterval={3000} autoHeight autoPlay={true} infinite mouseTracking items={items} />
 )
 Banner.Carousel = Carousel
 
