@@ -15,7 +15,7 @@ export function GiveDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <header className="text-white h-full bg-tb-green">GIVE</header>
+        <header className="text-white h-full bg-tb-green flex items-center">GIVE</header>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

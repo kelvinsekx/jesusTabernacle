@@ -21,7 +21,7 @@ export const Navigation = () => {
               </li>
             );
           })}
-          <li>
+          <li className="h-full">
             <GiveDialog />
           </li>
         </ul>
