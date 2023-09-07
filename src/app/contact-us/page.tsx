@@ -1,9 +1,10 @@
 import React from 'react'
 import {YoutubeIcon, InstagramIcon, MapPinIcon, MailIcon} from 'lucide-react'
 import {ContactForm} from '@/components/ContactForm/form'
+import {Container} from '@/components/container'
 
 const ContactUs = ()=> {
-    return <div>
+    return <Container>
         <div className='flex flex-col items-center'>
             <header className='text-black text-4.5xl pb-2'>Contact Us</header>
             <div className='flex gap-10 w-fit pt-20'>
@@ -14,8 +15,7 @@ const ContactUs = ()=> {
             </div>
             <ContactForm />
         </div>
-        <div></div>
-    </div>
+    </Container>
 }
 
 const Slate = ({icon, aside, main}: {icon: React.ReactNode, aside: string, main: string})=> (
