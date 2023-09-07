@@ -6,9 +6,8 @@ import Link from "next/link";
 import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity.client";
-import { sanityFetch } from "@/lib/sanityFetch";
 
-const query = groq`*[_type =="post" && defined(slug.current)]{
+const query = groq`*[_type =="post" && defined(slug.current)][0...4]{
   _id,
   title,
   slug,
@@ -46,10 +45,13 @@ const LatestSermo = () => {
             <Link
               key={index}
               href={sermon.slug.current}
-              className="border-2 border-tb-grey6 w-[40%] p-4"
+              className="border-2 hover:border-tb-black border-tb-grey6 bg-white w-[40%] p-4"
             >
               <p className="font-medium text-lg">{sermon.title}</p>
-              <small className="text-tb-grey3">Date: 28/08/23</small>
+              <small className="text-tb-grey3 flex justify-between w-full">
+                <span>Date: 28/08/23</span>
+                <span>Read more</span>
+              </small>
             </Link>
           ))}
         </div>

@@ -1,21 +1,27 @@
 import React from 'react'
 import {YoutubeIcon, InstagramIcon, MapPinIcon, MailIcon} from 'lucide-react'
 import {ContactForm} from '@/components/ContactForm/form'
-import {Container} from '@/components/container'
+import {LargeContainer} from '@/components/container'
+import {LocateUs} from '@/components/LocateUs/locateus'
 
 const ContactUs = ()=> {
-    return <Container>
+    return <LargeContainer>
         <div className='flex flex-col items-center'>
-            <header className='text-black text-4.5xl pb-2'>Contact Us</header>
-            <div className='flex gap-10 w-fit pt-20'>
-                <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={'No 2, imaginary address, kunle estate, Ibadan, Oyo state'} />
-                <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'@church2church'} />
-                <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />
-                <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
+            <div className='flex flex-col items-center gap-10 justify-center w-full py-20 bg-[url(/contact-graphics.jpg)]'>
+                <header className='text-black text-4.5xl pb-2'>Contact Us</header>
+                <div className='w-fit flex gap-10'>
+                    <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={'No 2, imaginary address, kunle estate, Ibadan, Oyo state'} />
+                    <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'@church2church'} />
+                    <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />
+                    <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
+                </div>
             </div>
-            <ContactForm />
+            <div className='w-3/4 relative bottom-8'>
+                <ContactForm />
+            </div>
         </div>
-    </Container>
+        <LocateUs />
+    </LargeContainer>
 }
 
 const Slate = ({icon, aside, main}: {icon: React.ReactNode, aside: string, main: string})=> (

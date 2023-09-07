@@ -14,7 +14,7 @@ const sources = [
 ];
 
 const Banner = ()=> {
-    return <div className="_34sdf max-w-7xl">
+    return <div className="_34sdf max-w-[100rem]">
         <Banner.Carousel
           items={sources.map((src, index) => (
             <Banner.Card src={src} key={index} />

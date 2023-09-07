@@ -34,7 +34,7 @@ const navlist = [
  {slug:'/', title:'Home'},
  {slug:'/live-service', title: "watch live service"},
  {slug:'/', title:"Events"},
- {slug:'/', title:"Sermon"},
+ {slug:'/sermons', title:"Sermons"},
  {slug:'/', title:"Gallery"},
  {slug:'/contact-us', title:"Contact Us"}
 ];
