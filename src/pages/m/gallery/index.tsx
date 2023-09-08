@@ -1,17 +1,26 @@
-import type { NextPage } from 'next'
+
+import * as React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
-import Bridge from '../components/BridgeIcon'
-import Modal from '../components/Modal'
-import cloudinary from '../lib/cloudinary'
-import getBase64ImageUrl from '../lib/generateBlurPlaceholder'
-import type { ImageProps } from '../lib/types'
-import { useLastViewedPhoto } from '../lib/useLastViewedPhoto'
+import Bridge from '@/components/BridgeIcon'
+import Modal from '@/components/Modal'
+import cloudinary from '@/lib/cloudinary'
+import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
+import type { ImageProps } from '@/lib/types'
+import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 
-const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
+const Home = ({images}: {images: ImageProps[]}) => {
+  // const [images, setImages] = React.useState<ImageProps[]>([])
+
+  // React.useEffect(()=> {
+  //   const images = async ()=> {
+  //       const imgs = await getImages()
+  //       setImages(imgs)
+  //   }
+  // }, [])
   const router = useRouter()
   const { photoId } = router.query
   const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
@@ -29,15 +38,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <title>Next.js Conf 2022 Photos</title>
-        <meta
-          property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
-        <meta
-          name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
+        <title>Jesus Tabernacle Photos</title>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
@@ -56,28 +57,23 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               </span>
               <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
             </div>
-            <Image src={'/rccg_logo'} alt="redeemed logo" height={200} width={200} />
+            <Image src={'/rccg_logo.png'} alt="redeemed logo" height={200} width={200} />
             <h1 className="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
-              2022 Event Photos
+              JESUS TABERNACLE PHOTOS 🔥
             </h1>
             <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
-              Our incredible Next.js community got together in San Francisco for
-              our first ever in-person conference!
+              Our incredible people are always filled with smile and love as you worship and join us! Halleluyah
             </p>
-            <a
-              className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
-              href="https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-cloudinary&project-name=nextjs-image-gallery&repository-name=with-cloudinary&env=NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,CLOUDINARY_API_KEY,CLOUDINARY_API_SECRET,CLOUDINARY_FOLDER&envDescription=API%20Keys%20from%20Cloudinary%20needed%20to%20run%20this%20application"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Clone and Deploy
-            </a>
+            <div
+              className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4">
+              Have a lovely time here!
+            </div>
           </div>
           {images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
               key={id}
-              href={`/?photoId=${id}`}
-              as={`/p/${id}`}
+              href={`/m/gallery?photoId=${id}`}
+              as={`/m/gallery/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
@@ -101,34 +97,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </div>
       </main>
       <footer className="p-6 text-center text-white/80 sm:p-12">
-        Thank you to{' '}
-        <a
-          href="https://edelsonphotography.com/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Josh Edelson
-        </a>
-        ,{' '}
-        <a
-          href="https://www.newrevmedia.com/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Jenny Morgan
-        </a>
-        , and{' '}
-        <a
-          href="https://www.garysextonphotography.com/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Gary Sexton
-        </a>{' '}
-        for the pictures.
+        Thank you to the Jesus Tabernacle Media Team 😍
       </footer>
     </>
   )
@@ -138,10 +107,11 @@ export default Home
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
+    .expression(`folder:samples/*`)
     .sort_by('public_id', 'desc')
     .max_results(400)
     .execute()
+
   let reducedResults: ImageProps[] = []
 
   let i = 0
@@ -167,7 +137,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      images: reducedResults,
-    },
+      images: reducedResults
+    }
   }
 }

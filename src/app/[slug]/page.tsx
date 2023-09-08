@@ -18,5 +18,6 @@ export default async function Page({ params }: { params: any }) {
   const queryParams = { slug: params?.slug ?? `` };
   const sermon = await client.fetch(postQuery, queryParams );
   console.log({sermonSlug: sermon})
+  if(!sermon) return <h1>Page Not Found</h1>
   return <Sermon sermon={sermon} />;
 }
