@@ -8,10 +8,10 @@ import SharedModal from './SharedModal'
 
 export default function Modal({
   images,
-  onClose,
+  onClose = ()=> {},
 }: {
   images: ImageProps[]
-  onClose?: () => void
+  onClose: () => void
 }) {
   let overlayRef = useRef()
   const router = useRouter()
