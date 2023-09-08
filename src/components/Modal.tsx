@@ -13,7 +13,7 @@ export default function Modal({
   images: ImageProps[]
   onClose: () => void
 }) {
-  let overlayRef = useRef<HTMLElement | null >(null)
+  let overlayRef = useRef<HTMLDivElement | null >(null)
   const router = useRouter()
 
   const { photoId } = router.query
