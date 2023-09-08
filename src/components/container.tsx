@@ -23,3 +23,20 @@ export const Container: React.FC<
     </div>
   );
 };
+
+export const LargeContainer: React.FC<
+  React.PropsWithChildren<TContainer & ContainerProps>
+> = ({ children, pad = false, className = "" }) => {
+  return (
+    <div
+      className={twMerge(
+        className,
+        clsx("max-w-[100rem] mx-auto", {
+          ["py-20"]: pad,
+        })
+      )}
+    >
+      {children}
+    </div>
+  );
+};
