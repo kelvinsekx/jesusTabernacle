@@ -12,6 +12,8 @@ import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
 import type { ImageProps } from '@/lib/types'
 import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 
+import { CldUploadWidget } from 'next-cloudinary';
+
 const Home = ({images}: {images: ImageProps[]}) => {
   // const [images, setImages] = React.useState<ImageProps[]>([])
 
@@ -57,7 +59,7 @@ const Home = ({images}: {images: ImageProps[]}) => {
               </span>
               <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
             </div>
-            <Image src={'/rccg_logo.png'} alt="redeemed logo" height={200} width={200} />
+            <Image src={'/rccg_logo.png'} alt="redeemed logo" height={100} width={100} />
             <h1 className="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
               JESUS TABERNACLE PHOTOS 🔥
             </h1>
@@ -67,6 +69,22 @@ const Home = ({images}: {images: ImageProps[]}) => {
             <div
               className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4">
               Have a lovely time here!
+            </div>
+            <div
+              className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4">
+              <CldUploadWidget uploadPreset="samples">
+              {({ open }) => {
+                function handleOnClick(e) {
+                e.preventDefault();
+                open();
+              }
+                return (
+                  <button className="button" onClick={handleOnClick}>
+                  Upload an Image
+                </button>
+                );
+                }}
+            </CldUploadWidget>
             </div>
           </div>
           {images.map(({ id, public_id, format, blurDataUrl }) => (
@@ -109,7 +127,7 @@ export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:samples/*`)
     .sort_by('public_id', 'desc')
-    .max_results(400)
+    .max_results(50)
     .execute()
 
   let reducedResults: ImageProps[] = []

@@ -24,7 +24,6 @@ const LatestSermo = () => {
     fetchSermons();
   }, []);
 
-  console.log({ latestSermon: sermons });
   return (
     <div
       style={{
