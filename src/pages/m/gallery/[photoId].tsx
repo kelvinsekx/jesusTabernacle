@@ -48,9 +48,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   const currentPhoto = reducedResults.find(
-    (img) => img.id === Number(context.params.photoId)
+    (img) => img.id === Number(context.params!.photoId)
   )
-  currentPhoto.blurDataUrl = await getBase64ImageUrl(currentPhoto)
+  currentPhoto!.blurDataUrl = await getBase64ImageUrl(currentPhoto!)
 
   return {
     props: {
@@ -66,7 +66,7 @@ export async function getStaticPaths() {
     .max_results(400)
     .execute()
 
-  let fullPaths = []
+  let fullPaths: { params: { photoId: string; }; }[] = []
   for (let i = 0; i < results.resources.length; i++) {
     fullPaths.push({ params: { photoId: i.toString() } })
   }
