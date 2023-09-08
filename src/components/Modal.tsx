@@ -13,7 +13,7 @@ export default function Modal({
   images: ImageProps[]
   onClose: () => void
 }) {
-  let overlayRef = useRef()
+  let overlayRef = useRef<HTMLElement | null >(null)
   const router = useRouter()
 
   const { photoId } = router.query
@@ -38,7 +38,7 @@ export default function Modal({
       {
         query: { photoId: newVal },
       },
-      `/p/${newVal}`,
+      `/m/gallery/${newVal}`,
       { shallow: true }
     )
   }
