@@ -33,7 +33,7 @@ import {
   
     const handlers = useSwipeable({
       onSwipedLeft: () => {
-        if (index < images?.length - 1) {
+        if (index < images?.length! - 1) {
           changePhotoId(index + 1)
         }
       },
@@ -45,7 +45,7 @@ import {
       trackMouse: true,
     })
   
-    let currentImage = images ? images[index] : currentPhoto
+    let currentImage = images ? images[index] : currentPhoto!
   
     return (
       <MotionConfig
@@ -104,7 +104,7 @@ import {
                         <ChevronLeftIcon className="h-6 w-6" />
                       </button>
                     )}
-                    {index + 1 < images.length && (
+                    {index + 1 < (images?.length as number) && (
                       <button
                         className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
                         style={{ transform: 'translate3d(0, 0, 0)' }}
@@ -172,7 +172,7 @@ import {
                   className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
                 >
                   <AnimatePresence initial={false}>
-                    {filteredImages.map(({ public_id, format, id }) => (
+                    {(filteredImages!).map(({ public_id, format, id }) => (
                       <motion.button
                         initial={{
                           width: '0%',
@@ -191,7 +191,7 @@ import {
                             ? 'z-20 rounded-md shadow shadow-black/50'
                             : 'z-10'
                         } ${id === 0 ? 'rounded-l-md' : ''} ${
-                          id === images.length - 1 ? 'rounded-r-md' : ''
+                          id === images?.length! - 1 ? 'rounded-r-md' : ''
                         } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-none`}
                       >
                         <Image
