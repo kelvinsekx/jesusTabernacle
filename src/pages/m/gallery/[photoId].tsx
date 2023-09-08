@@ -22,6 +22,7 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
         <meta name="twitter:image" content={currentPhotoUrl} />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
+        <h1 className='text-white'>Hello</h1>
         <Carousel currentPhoto={currentPhoto} index={index} />
       </main>
     </>

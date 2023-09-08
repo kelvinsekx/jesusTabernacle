@@ -30,8 +30,7 @@ export default function Carousel({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center">
-        <h1>Jesus is lord</h1>
-      <button
+      {/* <button
         className="absolute inset-0 z-30 cursor-default bg-black backdrop-blur-2xl"
         onClick={closeModal}
       >
@@ -42,7 +41,7 @@ export default function Carousel({
           fill
           priority={true}
         />
-      </button>
+      </button> */}
       <SharedModal
         index={index}
         changePhotoId={changePhotoId}
