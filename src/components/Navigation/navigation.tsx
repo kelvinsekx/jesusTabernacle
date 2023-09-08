@@ -5,19 +5,19 @@ import { GiveDialog } from "../GiveDialog/dialog";
 
 export const Navigation = () => {
   return (
-    <Container>
-      <div className="flex justify-between bg-white text-tb-black text-base items-center">
+    <Container className="">
+      <div className="flex max-lg:flex-col justify-between bg-white text-tb-black text-base items-center">
         <div className="w-20 h-20 relative">
           <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
         </div>
-        <ul className="flex justify-between items-center w-2/3 gap-2 h-20">
+        <ul className="flex justify-between items-center lg:w-2/3 gap-2 h-12 lg:h-20">
           {navlist.map((item, index) => {
             return (
               <li
                 key={index}
                 className={`h-full flex items-center px-2 cursor-pointer`}
               >
-                <Link href={item.slug}>{item.title.toUpperCase()}</Link>
+                <Link href={item.slug} className="max-lg:text-sm">{item.title.toUpperCase()}</Link>
               </li>
             );
           })}

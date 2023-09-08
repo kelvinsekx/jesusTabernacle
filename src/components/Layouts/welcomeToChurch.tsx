@@ -3,7 +3,7 @@ import { Container } from "../container";
 
 const WTC = () => {
   return (
-    <Container pad>
+    <Container pad className="!pt-0">
       <div className="flex justify-between">
         <WTC.ImgGrid />
         <WTC.Content />
@@ -13,7 +13,7 @@ const WTC = () => {
 };
 
 const ImageGrid = () => (
-  <div className="flex w-2/4 h-[30rem] gap-4">
+  <div className="flex w-2/4 h-[60vh] lg:h-[30rem] gap-4">
     <div className="w-1/2 relative h-full">
       <Image
         fill
@@ -46,22 +46,11 @@ WTC.ImgGrid = ImageGrid;
 
 const Content = () => (
   <section className="w-2/5 flex flex-col gap-4">
-    <header className="text-4.5xl py-2 text-tb-black">Welcome to church</header>
-    <p>
-      Welcome to Jesus Tabernacle, a vibrant community of believers who are
-      passionate about growing in faith and making a positive impact in our
-      world. We invite you to learn more about who we are, what we believe, and
-      how you can be a part of our journey.
-    </p>
-    <p>
-      {`Our Mission: At Jesus Tabernacle, our mission is to briefly describe your church's main mission or purpose, such as fostering spiritual growth,
-      community engagement, or spreading love and compassion.`}
-    </p>
-    <p>
-      Our Beliefs: We are a erer-affiliated church that embraces the core tenets
-      of the Christian faith. We believe in highlight some key beliefs, such as
-      the divinity of Jesus, salvation through grace, etc.
-    </p>
+    <header className="text-3xl lg:text-4.5xl py-2 text-tb-black font-semibold">Welcome to church</header>
+    <p>{`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We
+know God will meet with you at the point of your needs, we hope you have
+come to him with an open heart and faith because He will give you a
+testimony in Jesus name, Amen. Enjoy the service.`}</p>
   </section>
 );
 WTC.Content = Content;

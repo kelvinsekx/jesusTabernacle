@@ -14,7 +14,7 @@ export const Container: React.FC<
     <div
       className={twMerge(
         className,
-        clsx("max-w-6xl mx-auto", {
+        clsx("max-w-6xl mx-auto px-4", {
           ["py-20"]: pad,
         })
       )}

@@ -9,8 +9,8 @@ import {
 
 export const Footer = () => {
   return (
-    <div className="flex gap-x-24 p-17.5 bg-tb-green text-white text-base items-center">
-      <div className="w-32 h-32 relative">
+    <div className="flex flex-col lg:flex-row  gap-x-24 p-17.5 bg-tb-green text-white text-base items-center">
+      <div className="h-24 w-24 lg:w-32 lg:h-32 relative">
         <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
       </div>
       <div className="flex justify-between ">

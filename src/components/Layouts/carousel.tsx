@@ -23,7 +23,7 @@ const Banner = ()=> {
       </div>
 }
 
-const Card = ({src}: {src: string})=> <div className='relative h-[38rem] w-full'>
+const Card = ({src}: {src: string})=> <div className='relative h-[60vh] lg:h-[35rem] w-full'>
    <Image src={src} alt='' fill className='object-fit object-center' />
 </div>
 Banner.Card = Card
