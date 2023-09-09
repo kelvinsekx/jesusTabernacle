@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { Container } from "@/components/container";
+import { ListSermon } from "../ListSermon/listSermon";
 import Link from "next/link";
 
 import { groq } from "next-sanity";
@@ -31,29 +32,15 @@ const LatestSermo = () => {
       }}
     >
       <Container pad>
-        <div className="m-auto text-center w-[50%]">
-          <div className="text-4.5xl text-tb-black pb-2">Latest Sermon</div>
+        <div className="m-auto text-center w-[80%] md:w-[50%]">
+          <div className="text-3xl md:text-4.5xl text-tb-black pb-2">Latest Sermon</div>
           <p className="text-base pb-9" id="gallery">
             Timeless truths from the altar by our senior pastor - Pastor Patrick
             Mejeidu. Read great biblical insights and inspirational messages
             that is sure to transform your life.
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-y-4 justify-between">
-          {sermons.map((sermon, index) => (
-            <Link
-              key={index}
-              href={sermon.slug.current}
-              className="border-2 hover:border-tb-black border-tb-grey6 bg-white w-[40%] p-4"
-            >
-              <p className="font-medium text-lg">{sermon.title}</p>
-              <small className="text-tb-grey3 flex justify-between w-full">
-                <span>Date: 28/08/23</span>
-                <span>Read more</span>
-              </small>
-            </Link>
-          ))}
-        </div>
+        <ListSermon sermons={sermons} />
       </Container>
     </div>
   );

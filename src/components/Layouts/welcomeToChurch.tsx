@@ -13,7 +13,7 @@ const WTC = () => {
 };
 
 const ImageGrid = () => (
-  <div className="flex w-2/4 h-[60vh] lg:h-[30rem] gap-4">
+  <div className="flex w-2/4 h-[22rem] lg:h-[30rem] gap-4 max-md:hidden">
     <div className="w-1/2 relative h-full">
       <Image
         fill
@@ -45,7 +45,7 @@ const ImageGrid = () => (
 WTC.ImgGrid = ImageGrid;
 
 const Content = () => (
-  <section className="w-2/5 flex flex-col gap-4">
+  <section className="w-full md:w-2/5 flex flex-col gap-4">
     <header className="text-3xl lg:text-4.5xl py-2 text-tb-black font-semibold">Welcome to church</header>
     <p>{`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We
 know God will meet with you at the point of your needs, we hope you have

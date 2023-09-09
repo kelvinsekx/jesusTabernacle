@@ -8,8 +8,8 @@ const ContactUs = ()=> {
     return <LargeContainer>
         <div className='flex flex-col items-center'>
             <div className='flex flex-col items-center gap-10 justify-center w-full py-20 bg-[url(/contact-graphics.jpg)]'>
-                <header className='text-black text-4.5xl pb-2'>Contact Us</header>
-                <div className='w-fit flex gap-10'>
+                <header className='text-black text-3xl md:text-4.5xl pb-2'>Contact Us</header>
+                <div className='w-fit flex flex-col md:flex-row gap-4 md:gap-10'>
                     <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={'No 2, imaginary address, kunle estate, Ibadan, Oyo state'} />
                     <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'@church2church'} />
                     <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />

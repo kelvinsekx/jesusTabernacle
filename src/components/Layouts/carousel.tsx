@@ -23,12 +23,12 @@ const Banner = ()=> {
       </div>
 }
 
-const Card = ({src}: {src: string})=> <div className='relative h-[60vh] lg:h-[35rem] w-full'>
+const Card = ({src}: {src: string})=> <div className='relative h-[25rem] lg:h-[35rem] w-full'>
    <Image src={src} alt='' fill className='object-fit object-center' />
 </div>
 Banner.Card = Card
 
-const Carousel = ({ items }: { items: React.ReactNode[] }) => (
+export const Carousel = ({ items }: { items: React.ReactNode[] }) => (
   <AliceCarousel animationDuration={2500} autoPlayInterval={3000} autoHeight autoPlay={true} infinite mouseTracking items={items} />
 )
 Banner.Carousel = Carousel
