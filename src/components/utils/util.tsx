@@ -33,3 +33,7 @@ export function convertDateString(dateString: string): string[] {
 
   return [day, month, time];
 }
+
+export const getHumaneDate = (date: string)=> {
+  return convertDateString(date).toString().replaceAll(',', ', ')
+}
