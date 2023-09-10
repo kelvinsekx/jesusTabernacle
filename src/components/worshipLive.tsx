@@ -10,7 +10,7 @@ export default function WorshipLive() {
         <div 
         className="text-center flex flex-col gap-2 items-center 
         bg-[url(/worship-with-us-at-jesus-tabernacle.jpg)] text-white py-20 md:py-28">
-          <Header className="text-white max-md:w-full max-md:text-2xl">Worship with us in real time</Header>
+          <Header className="text-white max-md:w-full max-md:text-[1.7rem]/[26px]">Worship with us in real time</Header>
           <p className="text-base" id="gallery">
          Experience the word and worship together online with our live church service
           </p>
