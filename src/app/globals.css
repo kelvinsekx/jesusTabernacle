@@ -99,6 +99,7 @@
 ._34sdf .alice-carousel__dots {
     position: absolute;
     bottom: 2rem;
+    width: 85%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -112,6 +113,7 @@
 
 .alice-carousel__dots-item:not(.__custom).__active {
     background-color: #d86b35 !important;
-    /* width:2rem !important; */
-    /* height:1rem !important; */
+    width:2rem !important;
+    height:0.5rem !important;
+    border-radius: 0px !important;
   }
