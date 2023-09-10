@@ -46,7 +46,7 @@ const ImageGrid = () => (
 WTC.ImgGrid = ImageGrid;
 
 const Content = () => (
-  <section className="w-full md:w-2/5 flex flex-col gap-4">
+  <section className="w-full md:w-2/5 flex flex-col gap-2">
     <Header>Welcome to church</Header>
     <p>
       {`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We

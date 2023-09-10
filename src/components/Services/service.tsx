@@ -5,6 +5,7 @@ import { Container } from "../container";
 import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
+import { Header } from "../Header/header";
 
 
 export const Services = async () => {
@@ -20,7 +21,7 @@ export const Services = async () => {
     >
       <Container pad className="text-white">
         <div className="m-auto text-center w-[80%] md:w-[50%]">
-          <div className="text-4.5xl text-white pb-2">Our Services</div>
+          <Header className="text-white">Our Services</Header>
           <p className="text-base pb-9" id="gallery">
             We hold services on Sundays, Tuesdays, Wednesdays, Thursday and
             Friday. They are designed to help different aspects of our life
