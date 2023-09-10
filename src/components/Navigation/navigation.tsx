@@ -22,12 +22,9 @@ export const Navigation = () => {
         'md:flex-row',
         "justify-between bg-white text-tb-black text-base items-center"
       )}>
-        <div className='flex items-baseline'>
           <div className="h-12 w-12 md:w-20 md:h-20 relative">
             <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
           </div>
-          <small className='md:hidden relative bottom-2'>Jesus Tabernacle...</small>
-        </div>
         <div className={clsx(
           'flex items-center gap-2 h-12',
           'md:flex-row',
