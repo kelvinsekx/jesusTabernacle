@@ -2,6 +2,7 @@ import * as React from "react";
 import { LargeContainer } from "./container";
 import {Video} from 'lucide-react'
 import { Header } from "./Header/header";
+import Link from "next/link";
 
 export default function WorshipLive() {
   return (
@@ -9,15 +10,15 @@ export default function WorshipLive() {
       <LargeContainer className="">
         <div 
         className="text-center flex flex-col gap-2 items-center 
-        bg-[url(/worship-with-us-at-jesus-tabernacle.jpg)] text-white py-11">
-          <Header className="text-white">Worship with us in real time</Header>
+        bg-[url(/worship-with-us-at-jesus-tabernacle.jpg)] text-white py-20 md:py-28">
+          <Header className="text-white max-md:w-full max-md:text-[1.7rem]/[26px]">Worship with us in real time</Header>
           <p className="text-base" id="gallery">
          Experience the word and worship together online with our live church service
           </p>
-          <a href="https://google.com" className='mt-4 flex gap-2 bg-tb-green p-2 rounded'>
+          <Link href="/live-service" className='mt-4 flex justify-center items-center gap-2 bg-tb-green p-2 rounded w-4/5 md:w-1/4'>
             <span>Join Live Service</span>
             <Video />
-          </a>
+          </Link>
         </div>
       </LargeContainer>
     </div>

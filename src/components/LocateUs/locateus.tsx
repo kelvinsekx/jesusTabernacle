@@ -9,7 +9,7 @@ export function LocateUs() {
     <div className="bg-[#EAF2F6]">
       <Container pad>
         <Section>
-          <Header>Where we are located</Header>
+          <Header className='max-md:text-[1.7rem]/[26px] text-center'>Where we are located</Header>
           <Description>
           Be the First to Know About Exciting Events and Activities
           </Description>
