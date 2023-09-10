@@ -13,10 +13,10 @@ export const Container: React.FC<
   return (
     <div
       className={twMerge(
-        className,
         clsx("max-w-6xl mx-auto px-4", {
           ["py-20"]: pad,
-        })
+        }),
+        className
       )}
     >
       {children}
