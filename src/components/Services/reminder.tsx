@@ -124,7 +124,7 @@ export const Reminder = ({event}: {event: any}) => {
   };
   return (
     <>
-      <div onClick={handleReminder} className="flex gap-2 text-tb-gold text-sm">
+      <div onClick={handleReminder} className="flex gap-2 text-tb-gold text-sm items-center">
         <Clock /> <span>Set Reminder</span>
       </div>
     </>

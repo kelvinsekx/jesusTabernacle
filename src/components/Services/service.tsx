@@ -8,14 +8,13 @@ import { Reminder } from "./reminder";
 import { Header } from "../Header/header";
 import { Description } from "../Description";
 import { Section } from "../Section/section";
-import {Clock} from 'lucide-react'
 
 
 export const Services = async () => {
-  // let events = await getUpComingEvents()
-  // events = events || []
+  let events = await getUpComingEvents()
+  events = events || []
 
-  let events = [1,2,3,4,5,6]
+ 
   return (
     <div
       style={{
@@ -37,19 +36,17 @@ export const Services = async () => {
             <p>No Recent Events</p>
           ) : (
             events.map((event, index) => {
-              // const [day, month, time] = convertDateString(
-              //   (event?.start?.dateTime as string)
-              // );
+              const [day, time] = convertDateString(
+                (event?.start?.dateTime as string)
+              );
               return (
                 <div className="w-[60vw] md:w-fit flex gap-2 flex-col items-center" key={index}>
-                  <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">MONDAY</div>
+                  <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">{day.toUpperCase()}</div>
                   <div className="text-lg md:text-xl pb-1 text-center">
-                    Fresh Anointing
+                    {event.summary}
                   </div>
-                  <div className="text-xs">12pm - 12:30pm (prayer line)</div>
-                  <div className="flex gap-2 text-tb-gold text-sm items-center">
-                    <Clock /> <span>Set Reminder</span>
-                </div>
+                  <div className="text-xs">{time}</div>
+                  <Reminder event={event} />
                 </div>
               );
             })
