@@ -14,7 +14,7 @@ import { twMerge } from "tailwind-merge";
 export const Footer = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-y-6  gap-x-24 p-9 md:p-17.5 bg-tb-green text-white text-base md:items-center">
-      <div className="h-24 w-24 lg:w-32 lg:h-32 relative">
+      <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative">
         <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
       </div>
       <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between ">
