@@ -12,7 +12,8 @@ import { client } from "@/lib/sanity.client";
 const query = groq`*[_type =="post" && defined(slug.current)]{
   _id,
   title,
-  slug
+  slug,
+  publishedAt
 }`;
 
 export default function Sermons() {

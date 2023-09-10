@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Container } from "@/components/container";
 import { ListSermon } from "../ListSermon/listSermon";
-import Link from "next/link";
+
 
 import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
@@ -15,7 +15,8 @@ const query = groq`*[_type =="post" && defined(slug.current)][0...4]{
   _id,
   title,
   slug,
-  body
+  body,
+  publishedAt
 }`;
 
 const LatestSermo = () => {
@@ -27,7 +28,6 @@ const LatestSermo = () => {
     };
     fetchSermons();
   }, []);
-
   return (
     <div
       style={{
