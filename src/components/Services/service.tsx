@@ -5,39 +5,9 @@ import { Container } from "../container";
 import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
+import { Header } from "../Header/header";
+import { Description } from "../Description";
 
-type TEvent = {
-  "id": string,
-  "status": string,
-  "htmlLink": string,
-  "created": Date,
-  "updated": Date,
-  "summary": string,
-  "description": string,
-  "location": string,
-  "colorId": string,
-  "start": {
-    "date": Date,
-    "dateTime": Date,
-    "timeZone": string
-  },
-  "end": {
-    "date": string,
-    "dateTime": Date,
-    "timeZone": string
-  },
-  "recurringEventId": string,
-  "transparency": string,
-  "visibility": string,
-  "iCalUID": string,
-  "hangoutLink": string,
-  
-  "source": {
-    "url": string,
-    "title": string
-  },
-  "eventType": string
-}
 
 export const Services = async () => {
   let events = await getUpComingEvents()
@@ -51,12 +21,12 @@ export const Services = async () => {
       }}
     >
       <Container pad className="text-white">
-        <div className="m-auto text-center w-[50%]">
-          <div className="text-4.5xl text-white pb-2">Our Services</div>
-          <p className="text-base pb-9" id="gallery">
+        <div className="m-auto text-center w-[80%] md:w-[50%]">
+          <Header className="text-white">Our Services</Header>
+          <Description className="text-white">
             We hold services on Sundays, Tuesdays, Wednesdays, Thursday and
             Friday. They are designed to help different aspects of our life
-          </p>
+          </Description>
         </div>
         <div className="flex flex-wrap gap-10 justify-center items-center">
           {(events.length < 1 ) ? (
@@ -67,7 +37,7 @@ export const Services = async () => {
                 (event?.start?.dateTime as string)
               );
               return (
-                <div className="40rem flex gap-2 flex-col items-center" key={index}>
+                <div className="w-[60vw] md:w-fit flex gap-2 flex-col items-center" key={index}>
                   <div className="text-2xl font-semibold pb-6">{day}</div>
                   <div className="text-2xl pb-1 text-center">
                     {event.summary}

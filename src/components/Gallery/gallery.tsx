@@ -1,17 +1,19 @@
 import * as React from "react";
 import { IBTCMarquee } from "./ibtcMarquee";
 import { Container } from "../container";
+import { Header } from "../Header/header";
+import { Description } from "../Description";
 
 export function Gallery() {
   return (
     <div className="bg-[#EAF2F6]">
       <Container pad>
-        <div className="text-center">
-          <div className="text-black text-4.5xl pb-2">Our Gallery</div>
-          <p className="text-tb-grey2 text-base" id="gallery">
+        <section className="text-center">
+          <Header>Our Gallery</Header>
+          <Description>
             Be the First to Know About Exciting Events and Activities
-          </p>
-        </div>
+          </Description>
+        </section>
       </Container>
       <IBTCMarquee images={sources}></IBTCMarquee>
       <IBTCMarquee images={sources2} reverse></IBTCMarquee>

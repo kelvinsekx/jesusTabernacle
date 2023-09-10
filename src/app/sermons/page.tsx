@@ -3,6 +3,10 @@ import * as React from "react";
 import Link from "next/link";
 import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
+
+import {Container, LargeContainer} from "@/components/container"
+import { ListSermon } from "@/components/ListSermon/listSermon";
+
 import { client } from "@/lib/sanity.client";
 
 const query = groq`*[_type =="post" && defined(slug.current)]{
@@ -21,12 +25,16 @@ export default function Sermons() {
     fetchSermons();
   }, []);
   return (
-    <div className="text-base/[22px] text-tb-grey2">
-      {sermons.map((sermon, index) => (
-        <Link key={index} href={sermon.slug.current}>
-          {sermon.title}
-        </Link>
-      ))}
-    </div>
+    <LargeContainer className="text-base/[22px] text-tb-grey2">
+      <Sermons.Banner />
+      <Container className="my-8">
+        <ListSermon sermons={sermons} />
+      </Container>
+    </LargeContainer>
   );
 }
+
+const Banner = ()=> <div className="text-white text-4.5xl flex items-center justify-center text-bold w-full h-52 bg-[url(/sermon_banner.jpg)]">
+  <span>Sermons</span>
+</div>
+Sermons.Banner = Banner
