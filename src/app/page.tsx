@@ -1,7 +1,7 @@
 import MainBanner from '@/components/Layouts/banner'
-// import WelcomeToChurch from "@/components/Layouts/welcomeToChurch";
-// import Posters from "@/components/Layouts/posters";
-// import WorshipLive from "@/components/worshipLive";
+import WelcomeToChurch from "@/components/Layouts/welcomeToChurch";
+import Posters from "@/components/Layouts/posters";
+import WorshipLive from "@/components/worshipLive";
 import { Gallery } from "@/components/Gallery/gallery";
  import { Services } from "@/components/Services/service";
  import LatestSermo from "@/components/Sermons/latestSermon";
@@ -11,13 +11,13 @@ export default async function Home() {
   return (
     <div className="text-base/[22px] text-tb-grey2">
       <MainBanner />
-      {/* <WelcomeToChurch />
+      <WelcomeToChurch />
       <Posters />
       <WorshipLive /> 
       <Gallery /> 
       <Services /> 
       <LatestSermo />
-      <LocateUs /> */}
+      <LocateUs />
     </div>
   );
 }

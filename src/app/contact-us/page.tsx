@@ -1,6 +1,7 @@
 import React from 'react'
 import {YoutubeIcon, InstagramIcon, MapPinIcon, MailIcon} from 'lucide-react'
 import {ContactForm} from '@/components/ContactForm/form'
+import { Header } from '@/components/Header/header'
 import {LargeContainer} from '@/components/container'
 import {LocateUs} from '@/components/LocateUs/locateus'
 
@@ -8,7 +9,7 @@ const ContactUs = ()=> {
     return <LargeContainer>
         <div className='flex flex-col items-center'>
             <div className='flex flex-col items-center gap-10 justify-center w-full py-20 bg-[url(/contact-graphics.jpg)]'>
-                <header className='text-black text-3xl md:text-4.5xl pb-2'>Contact Us</header>
+                <Header>Contact Us</Header>
                 <div className='w-fit flex flex-col md:flex-row gap-4 md:gap-10'>
                     <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={'No 2, imaginary address, kunle estate, Ibadan, Oyo state'} />
                     <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'@church2church'} />

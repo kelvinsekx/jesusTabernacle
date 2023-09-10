@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "../container";
+import { Header } from "../Header/header";
 import UploadPosters from "../uploadPosters"
 import cloudinary from "./../../lib/cloudinary"
 
@@ -32,9 +33,9 @@ const Posters = async () => {
  <Container pad>
    <div>
      <div className="text-center pb-4">
-       <div className="text-black text-3xl md:text-4.5xl pb-2">
+       <Header>
          Stay informed about our programs
-       </div>
+       </Header>
        <p className="text-tb-grey2 text-base text-center" id="gallery">
          Be the First to Know About Exciting Events and Activities
        </p>

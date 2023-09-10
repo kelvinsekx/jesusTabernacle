@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "../container";
+import { Header } from "../Header/header";
 
 const WTC = () => {
   return (
@@ -46,11 +47,13 @@ WTC.ImgGrid = ImageGrid;
 
 const Content = () => (
   <section className="w-full md:w-2/5 flex flex-col gap-4">
-    <header className="text-3xl lg:text-4.5xl py-2 text-tb-black font-semibold">Welcome to church</header>
-    <p>{`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We
+    <Header>Welcome to church</Header>
+    <p>
+      {`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We
 know God will meet with you at the point of your needs, we hope you have
 come to him with an open heart and faith because He will give you a
-testimony in Jesus name, Amen. Enjoy the service.`}</p>
+testimony in Jesus name, Amen. Enjoy the service.`}
+    </p>
   </section>
 );
 WTC.Content = Content;
