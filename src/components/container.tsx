@@ -13,8 +13,8 @@ export const Container: React.FC<
   return (
     <div
       className={twMerge(
-        clsx("max-w-6xl mx-auto px-4", {
-          ["py-20"]: pad,
+        clsx("max-w-6xl mx-auto px-2 md:px-4", {
+          ["py-10 md:py-20"]: pad,
         }),
         className
       )}
@@ -32,7 +32,7 @@ export const LargeContainer: React.FC<
       className={twMerge(
         className,
         clsx("max-w-[100rem] mx-auto", {
-          ["py-20"]: pad,
+          ["py-10 md:py-20"]: pad,
         })
       )}
     >

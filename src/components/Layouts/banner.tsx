@@ -23,7 +23,7 @@ const Banner = ()=> {
       </div>
 }
 
-const Card = ({src}: {src: string})=> <div className='relative h-[25rem] lg:h-[35rem] w-full'>
+const Card = ({src}: {src: string})=> <div className='relative h-[22rem] lg:h-[35rem] w-full'>
    <Image src={src} alt='' fill className='object-cover aspect-[3/4]' />
 </div>
 Banner.Card = Card
