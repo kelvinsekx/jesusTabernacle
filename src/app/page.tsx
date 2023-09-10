@@ -14,7 +14,7 @@ export default async function Home() {
       <WelcomeToChurch />
       <Posters />
       <WorshipLive /> 
-      <Gallery /> 
+      <Gallery />  
       <Services /> 
       <LatestSermo />
       <LocateUs />

@@ -3,17 +3,18 @@ import { IBTCMarquee } from "./ibtcMarquee";
 import { Container } from "../container";
 import { Header } from "../Header/header";
 import { Description } from "../Description";
+import { Section } from "../Section/section";
 
 export function Gallery() {
   return (
     <div className="bg-[#EAF2F6]">
       <Container pad>
-        <section className="text-center">
+        <Section>
           <Header>Our Gallery</Header>
           <Description>
             Be the First to Know About Exciting Events and Activities
           </Description>
-        </section>
+        </Section>
       </Container>
       <IBTCMarquee images={sources}></IBTCMarquee>
       <IBTCMarquee images={sources2} reverse></IBTCMarquee>
