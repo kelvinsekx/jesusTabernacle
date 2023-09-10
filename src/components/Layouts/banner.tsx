@@ -24,7 +24,7 @@ const Banner = ()=> {
 }
 
 const Card = ({src}: {src: string})=> <div className='relative h-[25rem] lg:h-[35rem] w-full'>
-   <Image src={src} alt='' fill className='object-fit object-center' />
+   <Image src={src} alt='' fill className='object-cover aspect-[3/4]' />
 </div>
 Banner.Card = Card
 

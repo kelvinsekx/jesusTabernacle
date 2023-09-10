@@ -3,7 +3,7 @@ import { Container } from "../container";
 import UploadPosters from "../uploadPosters"
 import cloudinary from "./../../lib/cloudinary"
 
-import { Carousel as AliceCarousel } from "./carousel";
+import { Carousel as AliceCarousel } from "./banner";
 
 const getPosters = async ()=> {
   let results = await cloudinary.v2.search
