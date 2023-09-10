@@ -12,12 +12,12 @@ export default async function Home() {
     <div>
       <MainBanner />
       <WelcomeToChurch />
-      {/* <Posters />
+      <Posters />
       <WorshipLive /> 
       <Gallery /> 
       <Services /> 
       <LatestSermo />
-      <LocateUs /> */}
+      <LocateUs />
     </div>
   );
 }
