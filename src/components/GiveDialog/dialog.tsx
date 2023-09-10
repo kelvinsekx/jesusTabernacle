@@ -11,6 +11,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CheckIcon } from "lucide-react"
+import React from "react"
+import { Description } from "../Description"
 
 export function GiveDialog() {
   return (
@@ -20,26 +22,26 @@ export function GiveDialog() {
       </DialogTrigger>
       <DialogContent className="w-fit">
         <DialogHeader>
-          <DialogTitle className="text-black text-4.5xl pb-2 self-center">Make a Donation</DialogTitle>
+          <DialogTitle className="text-tb-black text-3xl md:text-4xl py-2 self-center">Make a Donation</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col gap-4 text-tb-ash text-base">
           <div>
             <div className="pb-4">What would you like to give for?</div>
             <div className="flex gap-4">
-                <div className="w-36 h-10 flex items-center justify-center bg-tb-ash/30">
-                  <span>Offering</span>
-                </div>
-                <div className="w-36 h-10 flex items-center justify-center bg-tb-ash/30">
-                  <span>Tithe</span>
-                </div>
-                <div className="w-36 h-10 flex items-center justify-center bg-tb-ash/30">
-                  <span>Others</span>
-                </div>
+                <GiveDialog.Label>
+                 <Description>Offering</Description>
+                </GiveDialog.Label>
+                <GiveDialog.Label>
+                  <Description>Tithe</Description>
+                </GiveDialog.Label>
+                <GiveDialog.Label>
+                  <Description>Others</Description>
+                </GiveDialog.Label>
             </div>
           </div>
           <div>
             <div className="pb-4">Select payment method:</div>
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
             <div className="flex w-36 h-10">
                 <div className="w-full h-full flex items-center justify-center border-2 hover:border-tb-green">
                   <span>Cashapp</span>
@@ -49,6 +51,12 @@ export function GiveDialog() {
             <div className="flex w-36 h-10">
                 <div className="w-full h-full flex items-center justify-center border-2 hover:border-tb-green">
                   <span>Zelle</span>
+                </div>
+                <span className="h-4 w-4 border-2 bg-tb-green rounded-full flex items-center justify-center relative bottom-2"><CheckIcon className="text-white w-4 h-4" /></span>
+            </div>
+            <div className="flex w-36 h-10">
+                <div className="w-full h-full flex items-center justify-center border-2 hover:border-tb-green">
+                  <span>Credit Card</span>
                 </div>
                 <span className="h-4 w-4 border-2 bg-tb-green rounded-full flex items-center justify-center relative bottom-2"><CheckIcon className="text-white w-4 h-4" /></span>
             </div>
@@ -68,3 +76,9 @@ export function GiveDialog() {
     </Dialog>
   )
 }
+
+const GLabel: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({children})=><div className="py-1 px-5 md:py-2 md:px-10 flex items-center justify-center bg-tb-ash/30">
+{children}
+</div>
+
+GiveDialog.Label = GLabel
