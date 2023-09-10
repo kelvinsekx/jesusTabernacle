@@ -6,6 +6,7 @@ import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 import { Header } from "../Header/header";
+import { Description } from "../Description";
 
 
 export const Services = async () => {
@@ -22,10 +23,10 @@ export const Services = async () => {
       <Container pad className="text-white">
         <div className="m-auto text-center w-[80%] md:w-[50%]">
           <Header className="text-white">Our Services</Header>
-          <p className="text-base pb-9" id="gallery">
+          <Description className="text-white">
             We hold services on Sundays, Tuesdays, Wednesdays, Thursday and
             Friday. They are designed to help different aspects of our life
-          </p>
+          </Description>
         </div>
         <div className="flex flex-wrap gap-10 justify-center items-center">
           {(events.length < 1 ) ? (

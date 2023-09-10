@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Container } from "../container";
 import { Header } from "../Header/header";
+import { Description } from "../Description";
 
 export function LocateUs() {
   return (
@@ -8,9 +9,9 @@ export function LocateUs() {
       <Container pad>
         <div className="text-center">
           <Header>Where we are located</Header>
-          <p className="text-tb-grey2 text-base" id="gallery">
+          <Description>
           Be the First to Know About Exciting Events and Activities
-          </p>
+          </Description>
         </div>
       </Container>
     </div>

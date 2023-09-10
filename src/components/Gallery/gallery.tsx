@@ -2,6 +2,7 @@ import * as React from "react";
 import { IBTCMarquee } from "./ibtcMarquee";
 import { Container } from "../container";
 import { Header } from "../Header/header";
+import { Description } from "../Description";
 
 export function Gallery() {
   return (
@@ -9,9 +10,9 @@ export function Gallery() {
       <Container pad>
         <section className="text-center">
           <Header>Our Gallery</Header>
-          <p className="text-tb-grey2 text-base" id="gallery">
+          <Description>
             Be the First to Know About Exciting Events and Activities
-          </p>
+          </Description>
         </section>
       </Container>
       <IBTCMarquee images={sources}></IBTCMarquee>

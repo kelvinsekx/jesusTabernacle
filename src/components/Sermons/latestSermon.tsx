@@ -8,6 +8,7 @@ import { groq } from "next-sanity";
 import type { SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 import { Header } from "../Header/header";
+import { Description } from "../Description";
 
 const query = groq`*[_type =="post" && defined(slug.current)][0...4]{
   _id,
@@ -35,11 +36,11 @@ const LatestSermo = () => {
       <Container pad>
         <section className="m-auto text-center w-[80%] md:w-[50%]">
           <Header>Latest Sermon</Header>
-          <p className="text-base pb-9" id="gallery">
+          <Description>
             Timeless truths from the altar by our senior pastor - Pastor Patrick
             Mejeidu. Read great biblical insights and inspirational messages
             that is sure to transform your life.
-          </p>
+          </Description>
         </section>
         <ListSermon sermons={sermons} />
       </Container>

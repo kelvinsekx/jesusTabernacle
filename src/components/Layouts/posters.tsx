@@ -5,6 +5,7 @@ import UploadPosters from "../uploadPosters"
 import cloudinary from "./../../lib/cloudinary"
 
 import { Carousel as AliceCarousel } from "./banner";
+import { Description } from "../Description";
 
 const getPosters = async ()=> {
   let results = await cloudinary.v2.search
@@ -36,9 +37,9 @@ const Posters = async () => {
        <Header>
          Stay informed about our programs
        </Header>
-       <p className="text-tb-grey2 text-base text-center" id="gallery">
+       <Description>
          Be the First to Know About Exciting Events and Activities
-       </p>
+       </Description>
      </div>
      <Posters.Images posters={posters.images} />
    </div>

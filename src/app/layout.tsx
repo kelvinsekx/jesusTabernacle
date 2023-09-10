@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-grey2">
+      <body className="text-base/[22px] text-tb-grey2">
         <Navigation />
         {children}
         <Footer />

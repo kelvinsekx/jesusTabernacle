@@ -9,7 +9,7 @@ import { LocateUs } from "@/components/LocateUs/locateus";
 
 export default async function Home() {
   return (
-    <div className="text-base/[22px] text-tb-grey2">
+    <div>
       <MainBanner />
       <WelcomeToChurch />
       <Posters />
