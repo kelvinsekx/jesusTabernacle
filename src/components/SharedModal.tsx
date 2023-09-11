@@ -59,7 +59,6 @@ import {
           className="relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center wide:h-full xl:taller-than-854:h-auto"
           {...handlers}
         >
-          <p className='text-white'>ddgd</p>
           {/* Main image */}
           <div className="w-full overflow-hidden">
             <div className="relative flex aspect-[3/2] items-center justify-center">
