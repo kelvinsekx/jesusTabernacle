@@ -61,7 +61,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export async function getStaticPaths() {
   const results = await cloudinary.v2.search
     .expression(`folder:samples/*`)
-    .sort_by('public_id', 'desc')
     .max_results(400)
     .execute()
 

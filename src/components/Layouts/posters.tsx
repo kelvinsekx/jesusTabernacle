@@ -10,7 +10,6 @@ import { Description } from "../Description";
 const getPosters = async ()=> {
   let results = await cloudinary.v2.search
     .expression(`folder:jesusTabernacle/*`)
-    .sort_by('public_id', 'desc')
     .max_results(3)
     .execute()
 

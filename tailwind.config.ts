@@ -78,6 +78,11 @@ const config: Config = {
       spacing: {
         "17.5": "68px",
       },
+      screens: {
+        narrow: { raw: '(max-aspect-ratio: 3 / 2)' },
+        wide: { raw: '(min-aspect-ratio: 3 / 2)' },
+        'taller-than-854': { raw: '(min-height: 854px)' },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
