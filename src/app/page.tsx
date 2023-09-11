@@ -3,8 +3,8 @@ import WelcomeToChurch from "@/components/Layouts/welcomeToChurch";
 import Posters from "@/components/Layouts/posters";
 import WorshipLive from "@/components/worshipLive";
 import { Gallery } from "@/components/Gallery/gallery";
- import { Services } from "@/components/Services/service";
- import LatestSermo from "@/components/Sermons/latestSermon";
+import { Services } from "@/components/Services/service";
+import LatestSermo from "@/components/Sermons/latestSermon";
 import { LocateUs } from "@/components/LocateUs/locateus";
 
 export default async function Home() {
@@ -13,9 +13,9 @@ export default async function Home() {
       <MainBanner />
       <WelcomeToChurch />
       <Posters />
-      {/* <WorshipLive /> 
+      <WorshipLive /> 
       <Gallery />  
-      <Services />  */}
+      <Services /> 
       <LatestSermo />
       <LocateUs />
     </div>
