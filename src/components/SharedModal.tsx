@@ -56,7 +56,7 @@ import {
         }}
       >
         <div
-          className="relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center _wide_h"
+          className="relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center wide:h-full xl:taller-than-854:h-auto"
           {...handlers}
         >
           {/* Main image */}
@@ -90,7 +90,7 @@ import {
           </div>
   
           {/* Buttons + bottom nav bar */}
-          <div className="absolute h-full md:h-4/6 inset-0 mx-auto flex max-w-7xl items-center justify-center  top-1/3">
+          <div className="absolute inset-0 mx-auto flex max-w-7xl items-center justify-center">
             {/* Buttons */}
             {loaded && (
               <div className="relative aspect-[3/2] max-h-full w-full">
