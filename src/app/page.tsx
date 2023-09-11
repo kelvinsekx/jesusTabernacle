@@ -13,9 +13,9 @@ export default async function Home() {
       <MainBanner />
       <WelcomeToChurch />
       <Posters />
-      <WorshipLive /> 
+      {/* <WorshipLive /> 
       <Gallery />  
-      <Services /> 
+      <Services />  */}
       <LatestSermo />
       <LocateUs />
     </div>

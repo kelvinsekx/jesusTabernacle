@@ -16,7 +16,7 @@ export const Navigation = () => {
 
   const toggleNavList = ()=>setMobileNavList((prevProps)=> !prevProps)
   return (
-    <Container className="px-1">
+    <Container className="px-1 _h_auto">
       <div className={clsx(
         'flex',
         'md:flex-row',

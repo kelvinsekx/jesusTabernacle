@@ -117,3 +117,25 @@
     height:0.5rem !important;
     border-radius: 0px !important;
   }
+
+
+/* GLOBAL CSS
+Minimum height */
+@media only screen and (min-width: 1280px) and (min-height: 554px){
+  ._h_auto {
+    border: 10px solid red;
+    height: auto;
+  }
+}
+/* 
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
+@media only screen and (min-aspect-ratio: 3 / 2) {
+   ._wide_h{
+      height: 100%;
+  }
+}
