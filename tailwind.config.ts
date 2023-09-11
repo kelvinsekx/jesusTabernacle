@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -131,7 +131,8 @@ const config: Config = {
           "0%": { transform: "translateX(140%)" },
           "100%": { transform: "translateX(0%)" },
         },
-      },
+        
+      }
     },
   },
   plugins: [require("tailwindcss-animate")]
