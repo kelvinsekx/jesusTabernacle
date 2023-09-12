@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 60
 
-export async function getStaticImages() {
+async function getStaticImages() {
     const results = await cloudinary.v2.search
       .expression(`folder:samples/*`)
       .max_results(50)
