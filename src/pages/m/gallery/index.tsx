@@ -12,7 +12,7 @@ import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
 import type { ImageProps } from '@/lib/types'
 import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 
-import { CldUploadWidget } from 'next-cloudinary';
+import {GalleryUpload} from '@/components/UploadButtons'
 
 const Home = ({images}: {images: ImageProps[]}) => {
   // const [images, setImages] = React.useState<ImageProps[]>([])
@@ -42,7 +42,7 @@ const Home = ({images}: {images: ImageProps[]}) => {
       <Head>
         <title>Jesus Tabernacle Photos</title>
       </Head>
-      <main className="mx-auto max-w-[1960px] p-4">
+      {/* <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
           <Modal
             images={images}
@@ -113,7 +113,7 @@ const Home = ({images}: {images: ImageProps[]}) => {
             </Link>
           ))}
         </div>
-      </main>
+      </main> */}
       <footer className="p-6 text-center text-white/80 sm:p-12">
         Thank you to the Jesus Tabernacle Media Team 😍
       </footer>
@@ -122,39 +122,3 @@ const Home = ({images}: {images: ImageProps[]}) => {
 }
 
 export default Home
-
-export async function getStaticProps() {
-  const results = await cloudinary.v2.search
-    .expression(`folder:samples/*`)
-    .max_results(50)
-    .execute()
-
-  let reducedResults: ImageProps[] = []
-
-  let i = 0
-  for (let result of results.resources) {
-    reducedResults.push({
-      id: i,
-      height: result.height,
-      width: result.width,
-      public_id: result.public_id,
-      format: result.format,
-    })
-    i++
-  }
-
-  const blurImagePromises = results.resources.map((image: ImageProps) => {
-    return getBase64ImageUrl(image)
-  })
-  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises)
-
-  for (let i = 0; i < reducedResults.length; i++) {
-    reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
-  }
-
-  return {
-    props: {
-      images: reducedResults
-    }
-  }
-}
