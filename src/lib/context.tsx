@@ -4,7 +4,7 @@ import { createContext, useReducer, Dispatch } from 'react';
 import type { ImageProps } from '@/lib/types'
 
 type StateType = {
-    images: ImageProps[] | []
+    images: ImageProps[] | undefined
 }
 
 type ActionType = {
