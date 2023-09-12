@@ -12,7 +12,6 @@ import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
 import type { ImageProps } from '@/lib/types'
 import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 
-import {GalleryUpload} from '@/components/UploadButtons'
 
 const Home = ({images}: {images: ImageProps[]}) => {
   // const [images, setImages] = React.useState<ImageProps[]>([])
