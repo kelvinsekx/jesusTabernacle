@@ -32,7 +32,7 @@ const Page = ()=> {
         {photoId && 
             (
                 <Modal
-                    images={state.images}
+                    images={state.images!}
                     onClose={() => {
                         setLastViewedPhoto(photoId)
                     }}
