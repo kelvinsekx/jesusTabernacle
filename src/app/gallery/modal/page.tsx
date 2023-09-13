@@ -10,48 +10,19 @@ import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 const Page = ()=> {
     const {state} = React.useContext(CounterContext)
 
-    const [modalImages, setModalImages] = React.useState<ImageProps[] | undefined>(state.images)
-    React.useEffect(()=> {
-        const fetchImagesFromServerOnReload = async ()=> {
-            if(!modalImages || modalImages?.length < 1){
-                const results = await cloudinary.v2.search
-                .expression(`folder:samples/*`)
-                .max_results(50)
-                .execute()
-
-                setModalImages(results)
-            }
-        }
-        fetchImagesFromServerOnReload()
-    }, [])
     const searchParams = useSearchParams()
     const query = searchParams!.get('photoId')
     let photoId = Number(query);
 
-    console.log({modal:state})
+  const cond = !photoId || !state.images || state.images.length < 1
 
-    const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
-
-    const lastViewedPhotoRef = React.useRef<HTMLAnchorElement>(null)
-
-    React.useEffect(() => {
-        // This effect keeps track of the last viewed photo in the modal to keep the index 
-        // page in sync when the user navigates back
-        if (lastViewedPhoto && !photoId) {
-            lastViewedPhotoRef.current?.scrollIntoView({ block: 'center' })
-            setLastViewedPhoto(null)
-        }
-    }, [photoId, lastViewedPhoto, setLastViewedPhoto])
     return <div>
-        {photoId && 
-            (
-                <Modal
-                    images={state.images!}
-                    onClose={() => {
-                        setLastViewedPhoto(photoId)
-                    }}
-                />
-            )
+        {
+            cond ?
+            <p className='text-center text-2xl p-4'>Please go <a href="/gallery">back to gallery page</a></p> :
+            <Modal
+                images={state.images!}
+            />
         }
     </div>
 }

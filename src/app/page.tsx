@@ -11,12 +11,12 @@ export default async function Home() {
   return (
     <div>
       <MainBanner />
-      {/* <WelcomeToChurch />
+      <WelcomeToChurch />
       <Posters />
       <WorshipLive /> 
       <Gallery />  
       <Services /> 
-      <LatestSermo /> */}
+      <LatestSermo />
       <LocateUs />
     </div>
   );

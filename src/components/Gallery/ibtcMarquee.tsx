@@ -12,6 +12,7 @@
 "use client";
 import * as React from "react";
 import clsx from "clsx";
+import type { ImageProps } from '@/lib/types'
 import { getSrcSets } from "../utils/util";
 
 const { useRef, useState, memo, useEffect } = React;
@@ -20,7 +21,7 @@ export function IBTCMarquee({
   images,
   reverse,
 }: {
-  images: string[];
+  images: ImageProps[];
   reverse?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -125,11 +126,11 @@ const CommunityImages = memo(function Images({
   images,
 }: {
   isLazy: boolean;
-  images: string[];
+  images: ImageProps[];
 }) {
   return (
     <>
-      {images.map((src, i) => (
+      {images.map(({ id, public_id, format, blurDataUrl }, i) => (
         <div
           key={i}
           className={clsx(
@@ -147,9 +148,9 @@ const CommunityImages = memo(function Images({
             <img
               loading={isLazy ? "lazy" : "eager"}
               sizes="(min-width: 30em) 28em, 100vw"
-              srcSet={getSrcSets(src)}
+              srcSet={getSrcSets(`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`)}
               alt={"alt"}
-              src={src}
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
               className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-ibtc-blue-10"
             />
           </div>

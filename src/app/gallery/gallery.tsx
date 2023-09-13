@@ -29,7 +29,7 @@ const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> 
         return <>
             {images.map(({ id, public_id, format, blurDataUrl }) => <Link
                 key={id}
-                href={`/gallery/modal/${id}`}
+                href={`/gallery/modal?photoId=${id}`}
                 className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
                 <Image

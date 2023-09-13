@@ -11,10 +11,8 @@ import SharedModal from './SharedModal'
 
 export default function Modal({
   images,
-  onClose = ()=> {},
 }: {
   images: ImageProps[]
-  onClose: () => void
 }) {
   let overlayRef = useRef<HTMLDivElement | null >(null)
   const searchParams = useSearchParams()
@@ -28,7 +26,6 @@ export default function Modal({
 
   function handleClose() {
     router.push('/', undefined)
-    onClose()
   }
 
   function changePhotoId(newVal: number) {
