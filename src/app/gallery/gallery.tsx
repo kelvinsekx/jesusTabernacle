@@ -79,3 +79,4 @@ const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> 
     </footer>
 </>
 })
+GalleryList.displayName = 'GalleryList';
