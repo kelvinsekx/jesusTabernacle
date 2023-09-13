@@ -50,7 +50,7 @@ export const Services = async () => {
           "linear-gradient(147deg, rgb(0, 47, 85) 0%, rgb(4, 22, 42) 37%, rgb(57, 19, 51) 100%)",
       }}
     >
-      <Container pad className="text-white">
+      <Container pad className="text-white flex flex-col items-center">
         <Section>
           <Header className="text-white">Our Services</Header>
           <Description className="text-white">
@@ -58,14 +58,15 @@ export const Services = async () => {
             Friday. They are designed to help different aspects of our life
           </Description>
         </Section>
-        <div className="flex flex-wrap gap-10 justify-center items-center">
+        <div className="w-full">
+        <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
           {(events.length < 1 ) ? (
             <p>No Recent Events</p>
           ) : (
             events.map((event, index) => {
               return (
-                <div className="w-[60vw] md:w-fit flex gap-2 flex-col items-center" key={index}>
-                  <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">{event.time.toUpperCase()}</div>
+                <div className="mb-10 flex gap-2 flex-col items-center" key={index}>
+                  <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">{event.day.toUpperCase()}</div>
                   <div className="text-lg md:text-xl pb-1 text-center">
                     {event.title}
                   </div>
@@ -75,6 +76,7 @@ export const Services = async () => {
               );
             })
           )}
+        </div>
         </div>
       </Container>
     </div>
