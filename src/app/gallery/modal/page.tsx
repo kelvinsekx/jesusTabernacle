@@ -1,11 +1,8 @@
 'use client'
-import cloudinary from '@/lib/cloudinary'
 import * as React from "react"
 import {useSearchParams } from "next/navigation"
 import Modal from '@/components/Modal'
-import type { ImageProps } from '@/lib/types'
 import { CounterContext } from "@/lib/context"
-import { useLastViewedPhoto } from '@/lib/useLastViewedPhoto'
 
 const Page = ()=> {
     const {state} = React.useContext(CounterContext)
