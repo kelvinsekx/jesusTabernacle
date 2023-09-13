@@ -5,7 +5,6 @@ import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
 
 import { Gallery as ClientGallery } from './gallery'
 import type { Metadata } from 'next'
-
  
 
 export const metadata: Metadata = {
