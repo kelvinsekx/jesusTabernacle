@@ -5,7 +5,49 @@ import { Header } from "../Header/header";
 import { Description } from "../Description";
 import { Section } from "../Section/section";
 
-export function Gallery() {
+import type { ImageProps } from '@/lib/types'
+import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
+import cloudinary from '@/lib/cloudinary'
+
+async function getStaticImages() {
+  const results = await cloudinary.v2.search
+    .expression(`folder:samples/*`)
+    .max_results(10)
+    .execute()
+
+
+  let reducedResults: ImageProps[] = []
+
+  let i = 0
+  for (let result of results.resources) {
+    reducedResults.push({
+      id: i,
+      height: result.height,
+      width: result.width,
+      public_id: result.public_id,
+      format: result.format,
+    })
+    i++
+  }
+
+  const blurImagePromises = results.resources.map((image: ImageProps) => {
+    return getBase64ImageUrl(image)
+  })
+  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises)
+
+  for (let i = 0; i < reducedResults.length; i++) {
+    reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
+  }
+
+  return {
+      images: reducedResults
+  }
+}
+
+export async function Gallery() {
+  const {images} = await getStaticImages()
+  const sources = images.slice(0, 5)
+  const sources2 = images.slice(5)
   return (
     <div className="bg-[#EAF2F6]">
       <Container pad>

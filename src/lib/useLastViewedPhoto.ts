@@ -1,6 +1,6 @@
 import { createGlobalState } from 'react-hooks-global-state'
 
-type TInitState = {photoToScrollTo: null | number | string}
+type TInitState = {photoToScrollTo: undefined| null | number | string}
 const initialState = { photoToScrollTo: null }
 const { useGlobalState } = createGlobalState<TInitState>(initialState)
 

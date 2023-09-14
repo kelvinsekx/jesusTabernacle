@@ -18,6 +18,7 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-google-maps/api": "^2.19.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.2",
     "@supabase/auth-helpers-nextjs": "^0.7.4",
@@ -54,6 +55,8 @@
     "react-use-keypress": "^1.3.1",
     "sanity": "^3.16.2",
     "server-only": "^0.0.1",
+    "sharp": "^0.32.5",
+    "spawn-sync": "^2.0.0",
     "styled-components": "5.2",
     "suspend-react": "^0.1.3",
     "tailwind-merge": "^1.14.0",
@@ -63,6 +66,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "jpegtran-bin": "^7.0.0"
   }
 }
