@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { Container } from "../container";
-import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 import { Header } from "../Header/header";
