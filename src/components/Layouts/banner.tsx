@@ -15,7 +15,7 @@ const Banner = ()=> {
     return <div className="_34sdf max-w-[100rem]">
         <Banner.Carousel
           items={[
-            <Card key='1'/>,
+            <Card  key='1'/>,
             <Card2 key='2'/>,
             <Card3 key='3'/>
           ]}
