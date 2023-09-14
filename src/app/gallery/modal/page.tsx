@@ -11,7 +11,7 @@ const Page = ()=> {
     const query = searchParams!.get('photoId')
     let photoId = Number(query);
 
-  const cond = !photoId || !state.images || state.images.length < 1
+  const cond =  !state.images || state.images.length < 1
 
     return <div>
         {

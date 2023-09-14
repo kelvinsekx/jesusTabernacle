@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { Container } from "../container";
-import { convertDateString } from "../utils/util";
 
 import { Reminder } from "./reminder";
 import { Header } from "../Header/header";
@@ -15,27 +14,27 @@ const events = [
     time: '9am - 10pm (prayer line)'
   },
   {
-    day: 'Monday',
+    day: 'TUESDAY',
+    title: 'Noon Prayers',
+    time: '9am - 10pm (prayer line)'
+  },
+  {
+    day: 'WEDNESDAY',
     title: 'Fresh Annointing',
     time: '9am - 10pm (prayer line)'
   },
   {
-    day: 'Monday',
+    day: 'THURSDAY',
     title: 'Fresh Annointing',
     time: '9am - 10pm (prayer line)'
   },
   {
-    day: 'Monday',
+    day: 'FRIDAY',
     title: 'Fresh Annointing',
     time: '9am - 10pm (prayer line)'
   },
   {
-    day: 'Monday',
-    title: 'Fresh Annointing',
-    time: '9am - 10pm (prayer line)'
-  },
-  {
-    day: 'Monday',
+    day: 'SUNDAY',
     title: 'Fresh Annointing',
     time: '9am - 10pm (prayer line)'
   },
