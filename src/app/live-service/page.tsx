@@ -34,7 +34,7 @@ const LiveService = ()=> {
         <div className='flex flex-col md:items-center'>
             <Header className='max-md:w-[80%]'>Jesus Tabernacle Live Broadcast</Header>
                 <div className='w-full md:w-[60%] h-[20rem] lg:h-[37.5rem] flex justify-center items-center bg-gradient-to-br from-green-500 to-indigo-800 rounded-md text-6xl md:text-9xl text-white'>
-                    <div className='border-8 border-yellow-800 shadow-2xl font-mono grid grid-cols-4 gap-x-px'>
+                    <div className='border-4 border-yellow-700 shadow-2xl font-mono grid grid-cols-4 gap-x-px'>
                         <div className='bg-black p-4 relative'>
                             <div className="absolute inset-0  grid grid-rows-2">
                                 <div className='bg-gradient-to-br from-gray-800 to-gray-900'></div>
