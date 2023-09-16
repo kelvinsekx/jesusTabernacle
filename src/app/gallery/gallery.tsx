@@ -14,9 +14,8 @@ export const Gallery = async ({  images }: {  images: ImageProps[] })=> {
     const searchParams = useSearchParams()
 
     const query = searchParams!.get('photoId')
-    let photoId = Number(query);
 
-    if(photoId) {
+    if(query !== null) {
         return  <Modal
             images={images!}
         />
