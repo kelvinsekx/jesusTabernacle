@@ -18,14 +18,14 @@ export default function Modal({
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const photoId = searchParams?.get('useId')
+  const photoId = searchParams?.get('photoId')
   let index = Number(photoId)
 
   const [direction, setDirection] = useState(0)
   const [curIndex, setCurIndex] = useState(index)
 
   function handleClose() {
-    router.push('/', undefined)
+    router.push('/gallery', undefined)
   }
 
   function changePhotoId(newVal: number) {
@@ -36,7 +36,7 @@ export default function Modal({
     }
     setCurIndex(newVal)
     router.push(
-      `/gallery/modal?photoId=${newVal}`
+      `/gallery/?photoId=${newVal}`
     )
   }
 

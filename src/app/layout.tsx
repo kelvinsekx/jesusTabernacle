@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/Footer/footer";
 import { Navigation } from "../components/Navigation/navigation";
-import {CounterContextProvider} from '@/lib/context'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,9 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="text-base/[22px] text-tb-grey2">
         <Navigation />
-        <CounterContextProvider>
           {children}
-        </CounterContextProvider>
         <Footer />
       </body>
     </html>
