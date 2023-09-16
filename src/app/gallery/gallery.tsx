@@ -13,8 +13,14 @@ import Modal from '@/components/Modal'
 export const Gallery = async ({  images }: {  images: ImageProps[] })=> {
     const searchParams = useSearchParams()
 
-    const query = searchParams!.get('photoId')
+    const query = searchParams?.get('photoId');
+    const photoId = Number(query)
 
+    console.log({
+        photoId,
+        query,
+        t: typeof query
+    })
     if(query !== null) {
         return  <Modal
             images={images!}
