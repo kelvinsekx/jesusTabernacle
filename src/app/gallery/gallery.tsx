@@ -21,7 +21,7 @@ export const Gallery = async ({  images }: {  images: ImageProps[] })=> {
         query,
         t: typeof query
     })
-    if(query !== null) {
+    if(query) {
         return  <Modal
             images={images!}
         />
