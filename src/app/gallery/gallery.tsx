@@ -1,20 +1,27 @@
 'use client'
 import * as React from 'react'
 import type { ImageProps } from '@/lib/types'
-import { CounterContext } from '@/lib/context'
 
 import Link from "next/link"
 import Image from 'next/image'
+import {useSearchParams } from "next/navigation"
 
 import Bridge from '@/components/BridgeIcon'
 import {GalleryUpload} from '@/components/UploadButtons/gallery'
+import Modal from '@/components/Modal'
 
 export const Gallery = async ({  images }: {  images: ImageProps[] })=> {
-    const { dispatch } = React.useContext(CounterContext);
+    const searchParams = useSearchParams()
 
-    React.useEffect(()=> {
-        dispatch({type: 'ADD', payload: images})
-    }, [])
+    const query = searchParams!.get('photoId')
+    let photoId = Number(query);
+
+    if(photoId) {
+        return  <Modal
+            images={images!}
+        />
+    }
+
 
     return (
         <>
@@ -24,12 +31,14 @@ export const Gallery = async ({  images }: {  images: ImageProps[] })=> {
 }
 
 const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> {
+
     const ImagesComponent = ()=> {
         if(!images) return <p>Error Fetching Images...Kindly reload this page.</p>
+
         return <>
             {images.map(({ id, public_id, format, blurDataUrl }) => <Link
                 key={id}
-                href={`/gallery/modal?photoId=${id}`}
+                href={`/gallery/?photoId=${id}`}
                 className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
                 <Image
