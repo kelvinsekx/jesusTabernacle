@@ -3,7 +3,7 @@ import cloudinary from '@/lib/cloudinary'
 import type { ImageProps } from '@/lib/types'
 import getBase64ImageUrl from '@/lib/generateBlurPlaceholder'
 
-import { Gallery as ClientGallery } from './gallery'
+import { Gallery as ClientGallery } from './list'
 import type { Metadata } from 'next'
  
 
@@ -49,7 +49,7 @@ async function getStaticImages() {
     }
   }
 
-const Gallery = async ()=> {
+export default async function Gallery(){
     const {images} = await getStaticImages()
     return (
         <>
@@ -57,4 +57,3 @@ const Gallery = async ()=> {
         </>
     )
 }
-export default Gallery
