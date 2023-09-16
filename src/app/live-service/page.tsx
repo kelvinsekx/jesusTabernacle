@@ -54,7 +54,7 @@ const LiveService = ()=> {
                                 <div className='bg-gradient-to-br from-gray-800 to-gray-700'></div>
                             </div>
                             <div className='relative flex flex-col gap-2 items-center'>
-                                <span >1{timeRemaining.hours}</span>
+                                <span >{timeRemaining.hours}</span>
                                 <span className='text-xs'>hrs</span>
                             </div>
                             <div className="absolute inset-0 flex items-center">
