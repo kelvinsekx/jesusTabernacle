@@ -17,7 +17,7 @@ const ContactUs = ()=> {
                     <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
                 </div>
             </div>
-            <div className='w-3/4 relative bottom-8'>
+            <div className='w-[95%] md:w-3/4 relative bottom-8'>
                 <ContactForm />
             </div>
         </div>
