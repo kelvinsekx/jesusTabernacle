@@ -36,7 +36,7 @@ export default function Modal({
     }
     setCurIndex(newVal)
     router.push(
-      `/gallery/?photoId=${newVal}`
+      `/gallery/modal?photoId=${newVal}`
     )
   }
 
