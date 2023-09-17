@@ -20,7 +20,7 @@ export function GiveDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <header className="text-white px-2 h-full bg-tb-green flex items-center">GIVE</header>
+        <header className="text-white px-4 h-full bg-tb-green flex items-center">GIVE</header>
       </DialogTrigger>
       <DialogContent className="">
         <DialogHeader>

@@ -18,21 +18,20 @@ export const Navigation = () => {
   return (
     <Container className="px-1 _h_auto">
       <div className={clsx(
-        'flex',
-        'md:flex-row',
+        'flex md:gap-4',
         "justify-between bg-white text-tb-black text-base items-center"
       )}>
-          <div className="h-12 w-12 md:w-20 md:h-20 relative">
-            <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
+          <div className="h-12 w-12 md:w-24 md:h-20 relative overflow-hidden">
+            <Image src={"/rccg_logo.png"} className='object-cover' fill alt="The Redeemed Church Logo" />
           </div>
         <div className={clsx(
           'flex items-center gap-2 h-12',
           'md:flex-row',
-          'lg:w-2/3 lg:h-20'
+          'lg:w-full lg:h-20 '
         )}>
           <Navigation.NavList className="max-md:hidden"/>
           {mobileNavList ? <Close toggle={toggleNavList} /> :  <Menu toggle={toggleNavList}/>}
-          <div className="h-full cursor-pointer px-2 max-lg:text-sm">
+          <div className="h-full cursor-pointer px-4 max-lg:text-sm">
             <GiveDialog />
           </div>
         </div>
@@ -61,9 +60,9 @@ const NavList:React.FC<React.ComponentPropsWithoutRef<'ul'>> = ({className})=> <
       return (
         <li
           key={index}
-          className={`h-full flex items-center px-2 cursor-pointer`}
+          className={`h-full max-sm:w-1/2  flex items-center md:px-2 cursor-pointer border-1 justify-center border-2 border-transparent hover:border-black/40 hover:text-neutral-400`}
         >
-          <Link href={item.slug} className="max-lg:text-sm text-center">{item.title.toUpperCase()}</Link>
+          <Link href={item.slug} className="max-lg:text-sm w-full sm:text-center h-full py-1 md:py-0 px-0 md:px-2 flex sm:justify-center items-center ">{item.title.toUpperCase()}</Link>
         </li>
       );
     })

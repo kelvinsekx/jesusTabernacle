@@ -13,53 +13,51 @@ import { twMerge } from "tailwind-merge";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col lg:flex-row gap-y-6  gap-x-24 p-9 md:p-17.5 bg-tb-green text-white text-base md:items-center">
-      <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative">
-        <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
+    <footer className="grid gap-10 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_3fr] bg-tb-green text-white text-base py-10 px-4">
+      <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative overflow-hidden sm:m-auto">
+        <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" className="object-cover" />
       </div>
-      <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between ">
-        <Footer.Section className="md:w-1/5">
-          <Footer.Header>Quick links</Footer.Header>
-          <ul>
-            {quick_links.map((link, index) => (
-              <li key={index}>{link}</li>
-            ))}
-          </ul>
-        </Footer.Section>
-        <Separator className='md:hidden'/>
-        <Footer.Section className="md:w-1/3">
-          <Footer.Header>Locate Us</Footer.Header>
-          <p>
-            Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705
-          </p>
-        </Footer.Section>
-        <Separator className='md:hidden'/>
-        <Footer.Section className="md:w-1/3">
-          <Footer.Header>Follow us</Footer.Header>
-          <div className="flex pb-6 gap-x-5">
-            <Footer.Icon>
-              <TwitterIcon />
-            </Footer.Icon>
-            <Footer.Icon>
-              <InstagramIcon />
-            </Footer.Icon>
-            <Footer.Icon>
-              <YoutubeIcon />
-            </Footer.Icon>
-            <Footer.Icon>
-              <FacebookIcon />
-            </Footer.Icon>
-          </div>
-          <p className="pb-6">
-            <span className="text-sm">Phone: </span>
-            (919) 641-3832
-          </p>
-          <p>
-            <span className="text-sm">Email: </span>rccgnajesustabernacle@gmail.com
-          </p>
-        </Footer.Section>
-      </div>
-    </div>
+      <Footer.Section className="">
+        <Footer.Header>Quick links</Footer.Header>
+        <ul>
+          {quick_links.map((link, index) => (
+            <li key={index}>{link}</li>
+          ))}
+        </ul>
+        <Separator className='md:hidden my-6'/>
+      </Footer.Section>
+      <Footer.Section className=" max-sm:text-left text-center lg:text-left">
+        <Footer.Header>Locate Us</Footer.Header>
+        <p>
+          Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705
+        </p>
+        <Separator className='md:hidden my-6'/>
+      </Footer.Section>
+      <Footer.Section className="">
+        <Footer.Header>Follow us</Footer.Header>
+        <div className="flex pb-6 gap-x-5">
+          <Footer.Icon>
+            <TwitterIcon className="h-full w-full" />
+          </Footer.Icon>
+          <Footer.Icon>
+            <InstagramIcon className="h-full w-full" />
+          </Footer.Icon>
+          <Footer.Icon>
+            <YoutubeIcon className="h-full w-full" />
+          </Footer.Icon>
+          <Footer.Icon>
+            <FacebookIcon className="h-full w-full" />
+          </Footer.Icon>
+        </div>
+        <p className="pb-6">
+          <span className="text-sm">Phone: </span>
+          (919) 641-3832
+        </p>
+        <p>
+          <span className="text-sm">Email: </span>rccgnajesustabernacle@gmail.com
+        </p>
+      </Footer.Section>
+    </footer>
   );
 };
 
@@ -78,7 +76,7 @@ const quick_links = [
  * @returns React.Node
  */
 const Icon: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <span className="border-2 rounded-full p-2">{children}</span>;
+  return <span className="border-2 rounded-full h-[30px] w-[30px] p-1">{children}</span>;
 };
 Footer.Icon = Icon;
 
@@ -93,7 +91,7 @@ const Header: React.FC<React.PropsWithChildren> = ({ children }) => <header clas
   
 Footer.Header = Header;
 
-const Section: React.FC<React.ComponentPropsWithoutRef<'section'>> = ({children, className})=>  <section className={twMerge("w-[80%] md:w-1/5", className)}>
+const Section: React.FC<React.ComponentPropsWithoutRef<'section'>> = ({children, className})=>  <section className={twMerge("", className)}>
  {children}
 </section>
 Footer.Section = Section
