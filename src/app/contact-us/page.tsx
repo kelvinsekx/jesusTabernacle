@@ -11,8 +11,8 @@ const ContactUs = ()=> {
             <div className='flex flex-col items-center gap-10 justify-center w-full py-20 bg-[url(/contact-graphics.jpg)]'>
                 <Header>Contact Us</Header>
                 <div className='w-fit flex flex-col md:flex-row gap-4 md:gap-10'>
-                    <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={'No 2, imaginary address, kunle estate, Ibadan, Oyo state'} />
-                    <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'@church2church'} />
+                    <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={' Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705'} />
+                    <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'rccgnajesustabernacle@gmail.com'} />
                     <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />
                     <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
                 </div>
@@ -26,10 +26,10 @@ const ContactUs = ()=> {
 }
 
 const Slate = ({icon, aside, main}: {icon: React.ReactNode, aside: string, main: string})=> (
-    <div className='flex flex-col items-center gap-2 w-44 text-center'>
+    <div className='flex flex-col items-center gap-2 w-36  text-center break-words'>
         <span className='bg-[#D9D9D9] rounded-full w-12 h-12 flex justify-center items-center'>{ icon} </span>
         <span className='text-tb-grey2 pt-1'>{aside}</span>
-        <span>{main}</span>
+        <p className='break-all'>{main}</p>
     </div>
 )
 ContactUs.Slate = Slate

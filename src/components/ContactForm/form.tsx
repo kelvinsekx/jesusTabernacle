@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 
 import {
@@ -27,11 +28,11 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 const formSchema = z.object({
-  name: z.string().min(2).max(50),
-  email: z.string().min(2).max(50),
+  name: z.string().trim().min(2).max(50),
+  email: z.string().email(),
   subject: z.string().min(2).max(50),
-  phone_number: z.string().min(2).max(50),
-  message: z.string().min(2).max(50),
+  phone_number: z.string().max(15),
+  message: z.string().min(2).max(200),
 })
 
 export function ContactForm() {
@@ -44,10 +45,14 @@ export function ContactForm() {
   })
  
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    const res = await fetch('/api/resend_mail', {
+      method: 'POST',
+      body: JSON.stringify(values)
+    })
+    
+    console.log(await res.json())
   }
 
   return (
@@ -67,7 +72,7 @@ export function ContactForm() {
               <FormItem className=" w-full">
                 <FormLabel>Name</FormLabel>
                 <FormControl className="">
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="name" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display name.
@@ -83,10 +88,10 @@ export function ContactForm() {
               <FormItem className=" w-full">
                 <FormLabel>Email</FormLabel>
                 <FormControl className="">
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="yxy@gmail.com" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                  Put your valid email here.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -99,10 +104,10 @@ export function ContactForm() {
               <FormItem className=" w-full">
                 <FormLabel>Subject</FormLabel>
                 <FormControl className="">
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="subject" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                  This is the title of your mail
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -115,10 +120,10 @@ export function ContactForm() {
               <FormItem className=" w-full">
                 <FormLabel>Phone Number</FormLabel>
                 <FormControl className="">
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="23 4513 33" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                  Put your phone number here
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -131,10 +136,10 @@ export function ContactForm() {
               <FormItem className=" w-full">
                 <FormLabel>Message</FormLabel>
                 <FormControl className="">
-                  <Input placeholder="shadcn" {...field} />
+                  <Textarea placeholder="your intent" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display name.
+                  Your message here.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
