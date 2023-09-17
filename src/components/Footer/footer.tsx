@@ -14,8 +14,8 @@ import { twMerge } from "tailwind-merge";
 export const Footer = () => {
   return (
     <footer className="grid gap-10 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_3fr] bg-tb-green text-white text-base py-10 px-4">
-      <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative sm:m-auto">
-        <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" />
+      <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative overflow-hidden sm:m-auto">
+        <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" className="object-cover" />
       </div>
       <Footer.Section className="">
         <Footer.Header>Quick links</Footer.Header>
