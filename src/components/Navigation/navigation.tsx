@@ -27,7 +27,7 @@ export const Navigation = () => {
         <div className={clsx(
           'flex items-center gap-2 h-12',
           'md:flex-row',
-          'lg:w-full lg:h-20 '
+          'md:w-fit lg:h-20 '
         )}>
           <Navigation.NavList className="max-md:hidden"/>
           {mobileNavList ? <Close toggle={toggleNavList} /> :  <Menu toggle={toggleNavList}/>}
@@ -44,7 +44,7 @@ export const Navigation = () => {
 const navlist = [
  {slug:'/', title:'Home'},
  {slug:'/live-service', title: "watch live service"},
- {slug:'/', title:"Events"},
+//  {slug:'/', title:"Events"},
  {slug:'/sermons', title:"Sermons"},
  {slug:'/gallery', title:"Gallery"},
  {slug:'/contact-us', title:"Contact Us"}
