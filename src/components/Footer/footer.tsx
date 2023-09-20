@@ -1,4 +1,6 @@
 import * as React from "react";
+
+import Link from "next/link";
 import Image from "next/image";
 import {
   TwitterIcon,
@@ -15,37 +17,44 @@ export const Footer = () => {
   return (
     <footer className="grid gap-10 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_3fr] bg-tb-green text-white text-base py-10 px-4">
       <div className="h-16 w-16 md:h-24 md:w-24 lg:w-32 lg:h-32 relative overflow-hidden sm:m-auto">
-        <Image src={"/rccg_logo.png"} fill alt="The Redeemed Church Logo" className="object-cover" />
+        <Image
+          src={"/rccg_logo.png"}
+          fill
+          alt="The Redeemed Church Logo"
+          className="object-cover"
+        />
       </div>
       <Footer.Section className="">
         <Footer.Header>Quick links</Footer.Header>
         <ul>
-          {quick_links.map((link, index) => (
-            <li key={index}>{link}</li>
+          {navlist.map((list, index) => (
+            <li key={index}>
+              <Link href={list.slug}>
+                {list.title}
+              </Link>
+            </li>
           ))}
         </ul>
-        <Separator className='md:hidden my-6'/>
+        <Separator className="md:hidden my-6" />
       </Footer.Section>
       <Footer.Section className=" max-sm:text-left text-center lg:text-left">
         <Footer.Header>Locate Us</Footer.Header>
-        <p>
-          Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705
-        </p>
-        <Separator className='md:hidden my-6'/>
+        <p>Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705</p>
+        <Separator className="md:hidden my-6" />
       </Footer.Section>
       <Footer.Section className="">
         <Footer.Header>Follow us</Footer.Header>
         <div className="flex pb-6 gap-x-5">
-          <Footer.Icon>
+          <Footer.Icon href="https://twitter.com/Rccgnajt">
             <TwitterIcon className="h-full w-full" />
           </Footer.Icon>
-          <Footer.Icon>
+          <Footer.Icon href="https://www.instagram.com/rccgjesustabernacle/#">
             <InstagramIcon className="h-full w-full" />
           </Footer.Icon>
-          <Footer.Icon>
+          <Footer.Icon href="https://www.youtube.com/@rccgnajesustabernacle5733">
             <YoutubeIcon className="h-full w-full" />
           </Footer.Icon>
-          <Footer.Icon>
+          <Footer.Icon href="https://www.facebook.com/jesustabernacle.rccgna">
             <FacebookIcon className="h-full w-full" />
           </Footer.Icon>
         </div>
@@ -54,20 +63,21 @@ export const Footer = () => {
           (919) 641-3832
         </p>
         <p>
-          <span className="text-sm">Email: </span>rccgnajesustabernacle@gmail.com
+          <span className="text-sm">Email: </span>
+          rccgnajesustabernacle@gmail.com
         </p>
       </Footer.Section>
     </footer>
   );
 };
 
-const quick_links = [
-  "About Us",
-  "Events",
-  "Sermons",
-  "Watch Live",
-  "Gallery",
-  "Give",
+
+const navlist = [
+  { slug: "/live-service", title: "Watch live service" },
+  //  {slug:'/', title:"Events"},
+  { slug: "/sermons", title: "Sermons" },
+  { slug: "/gallery", title: "Gallery" },
+  { slug: "/contact-us", title: "Contact Us" },
 ];
 
 /**
@@ -75,8 +85,8 @@ const quick_links = [
  * @param children
  * @returns React.Node
  */
-const Icon: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <span className="border-2 rounded-full h-[30px] w-[30px] p-1">{children}</span>;
+const Icon: React.FC<React.PropsWithChildren & {href? : string}> = ({ children, href='' }) => {
+  return <a href={href} className="border-2 rounded-full h-[30px] w-[30px] p-1 hover:border-slate-900">{children}</a>;
 };
 Footer.Icon = Icon;
 
