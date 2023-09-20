@@ -12,9 +12,8 @@ const ContactUs = ()=> {
                 <Header>Contact Us</Header>
                 <div className='w-fit flex flex-col md:flex-row gap-4 md:gap-10'>
                     <ContactUs.Slate icon={<MapPinIcon />} aside={'Visit us'} main={' Jesus Tabernacle, 2828 Hillsborogh Road, Durham, NC 27705'} />
-                    <ContactUs.Slate icon={<MailIcon />} aside={'Mail:'} main={'rccgnajesustabernacle@gmail.com'} />
                     <ContactUs.Slate icon={<InstagramIcon />} aside={'Instagram:'} main={'@church2church'} />
-                    <ContactUs.Slate icon={<YoutubeIcon />} aside={'Visit us'} main={'@church2church'} />
+                    <ContactUs.Slate icon={<YoutubeIcon />} aside={'Youtube'} main={'Tabernaclechurch'} />
                 </div>
             </div>
             <div className='w-[95%] md:w-3/4 relative bottom-8'>

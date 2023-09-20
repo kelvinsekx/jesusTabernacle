@@ -7,6 +7,11 @@ import { Header } from "../Header/header";
 import { Description } from "../Description";
 import { Section } from "../Section/section";
 
+export type Event = {
+  day: string,
+  title: string,
+  time: string
+}
 const events = [
   {
     day: 'Monday',
