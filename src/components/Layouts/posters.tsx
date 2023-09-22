@@ -27,7 +27,7 @@ const getPosters = async ()=> {
   }
 }
 const Posters = async () => {
-  const posters =  await getPosters()
+  const posters = await getPosters();
 
  return  <div className="bg-[#FDFBF7]">
  <Container pad>
@@ -50,8 +50,14 @@ const Posters = async () => {
 const PImages = ({posters}: {posters: {src: string}[]}) => {
   return (
     <div>
-      <DeskTop posters={posters}/>
-      <Mobile posters={posters}/>
+      {posters.length < 1 ? (
+        <p className="text-center text-2xl">No recent poster...</p>
+      ) : (
+        <>
+          <DeskTop posters={posters} />
+          <Mobile posters={posters} />
+        </>
+      )}
     </div>
   );
 };
