@@ -91,7 +91,7 @@ export function GiveDialog() {
   );
 }
 
-const GLabel: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({children})=><div className="py-1 px-5 md:py-2 md:px-10 flex items-center justify-center bg-tb-ash/30">
+const GLabel: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({children})=><div className="py-1 px-2 sm:px-5 md:py-2 md:px-10 flex items-center justify-center bg-tb-ash/30">
 {children}
 </div>
 
