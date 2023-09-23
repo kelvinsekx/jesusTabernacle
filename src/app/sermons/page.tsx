@@ -29,7 +29,7 @@ export default function Sermons() {
     <LargeContainer className="text-base/[22px] text-tb-grey2">
       <Sermons.Banner />
       <Container className="my-8">
-        <ListSermon sermons={sermons} />
+        {sermons.length < 1 ? <div className='text-center font-bold'>No recent sermon yet...</div>: <ListSermon sermons={sermons}  />}
       </Container>
     </LargeContainer>
   );

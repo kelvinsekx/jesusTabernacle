@@ -49,6 +49,8 @@ const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> 
             </Link>)}
         </>
     }
+
+    const admin = false;
     return <>
         <main className="mx-auto max-w-[1960px] p-4">
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4 text-tb-black">
@@ -69,7 +71,7 @@ const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> 
                 <div className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4">
                 Have a lovely time here!
                 </div>
-                <GalleryUpload />
+               {admin ? <GalleryUpload /> : null }
             </div>
             <ImagesComponent />
         </div>
