@@ -69,7 +69,7 @@ export const Services = async () => {
           ) : (
             events.map((event, index) => {
               return (
-                <div className="mb-10 flex gap-2 flex-col items-center" key={index}>
+                <div className="mb-10 flex gap-2 flex-col items-center relative" key={index}>
                   <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">{event.day.toUpperCase()}</div>
                   <div className="text-lg md:text-xl pb-1 text-center">
                     {event.title}
