@@ -38,12 +38,12 @@ const LatestSermo = () => {
         <Section>
           <Header>Latest Sermon</Header>
           <Description>
-            Timeless truths from the altar by our senior pastor - Pastor Patrick
-            Mejeidu. Read great biblical insights and inspirational messages
-            that is sure to transform your life.
+            Timeless truths from the altar by our senior pastor - Pastor Godwill
+            Samari. Read great biblical insights and inspirational messages that
+            is sure to transform your life.
           </Description>
         </Section>
-        <ListSermon sermons={sermons} />
+        {sermons.length < 1 ? <div className='text-center font-bold'>No recent sermon yet...</div> : <ListSermon sermons={sermons} />}
       </Container>
     </div>
   );

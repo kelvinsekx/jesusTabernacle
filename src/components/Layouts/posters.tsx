@@ -29,6 +29,8 @@ const getPosters = async ()=> {
 const Posters = async () => {
   const posters = await getPosters();
 
+  const admin = false
+
  return  <div className="bg-[#FDFBF7]">
  <Container pad>
    <div>
@@ -42,7 +44,7 @@ const Posters = async () => {
      </div>
      <Posters.Images posters={posters.images} />
    </div>
-   <UploadPosters />
+   {admin ? <UploadPosters /> : null  }
  </Container>
 </div>
 }
@@ -51,7 +53,7 @@ const PImages = ({posters}: {posters: {src: string}[]}) => {
   return (
     <div>
       {posters.length < 1 ? (
-        <p className="text-center text-2xl">No recent poster...</p>
+        <div className="text-center font-bold">No recent sermon yet...</div>
       ) : (
         <>
           <DeskTop posters={posters} />
