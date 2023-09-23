@@ -19,7 +19,9 @@ const ImageGrid = () => (
       <Image
         fill
         alt=""
-        src={"https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/members_of_Jesus_tabernacle_having_a_fun_time_bnjolw.jpg"}
+        src={
+          "https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/members_of_Jesus_tabernacle_having_a_fun_time_bnjolw"
+        }
         className="object-cover rounded"
       />
     </div>
@@ -28,16 +30,20 @@ const ImageGrid = () => (
         <Image
           fill
           alt=""
-          src={"https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/pastor_samari_and_first_lady_turdlo.jpg"}
+          src={
+            "https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/pastor_samari_and_first_lady_turdlo"
+          }
           className="object-fit rounded"
         />
       </div>
-      <div className="w-full relative h-1/2">
+      <div className="w-full relative h-1/2 overflow-hidden">
         <Image
           fill
           alt=""
-          src={"/welcome3.jpg"}
-          className="object-fit rounded"
+          src={
+            "https://res.cloudinary.com/joi-de-vivro/image/upload/v1695441008/samples/beautiful_members_of_redeemed_church_jesus_tabernacle_mxqb5x"
+          }
+          className="object-cover rounded"
         />
       </div>
     </div>
