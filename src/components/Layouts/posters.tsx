@@ -1,59 +1,59 @@
 import Image from "next/image";
 import { Container } from "../container";
 import { Header } from "../Header/header";
-import UploadPosters from "../uploadPosters"
-import cloudinary from "./../../lib/cloudinary"
+import UploadPosters from "../uploadPosters";
+import cloudinary from "./../../lib/cloudinary";
 
 import { Carousel as AliceCarousel } from "./banner";
 import { Description } from "../Description";
 
-const getPosters = async ()=> {
+const getPosters = async () => {
   let results = await cloudinary.v2.search
     .expression(`folder:jesusTabernacle/*`)
     .max_results(3)
-    .execute()
+    .execute();
 
-  let reducedResults: {src:string}[] = []
-  let i = 0
+  let reducedResults: { src: string }[] = [];
+  let i = 0;
   for (let result of results.resources) {
     reducedResults.push({
-      src: result.secure_url
-    })
-    i++
+      src: result.secure_url,
+    });
+    i++;
   }
 
   return {
-      images: reducedResults
-  }
-}
+    images: reducedResults,
+  };
+};
 const Posters = async () => {
   const posters = await getPosters();
 
-  const admin = false
+  const admin = false;
 
- return  <div className="bg-[#FDFBF7]">
- <Container pad>
-   <div>
-     <div className="text-center pb-4">
-       <Header>
-         Stay informed about our programs
-       </Header>
-       <Description>
-         Be the First to Know About Exciting Events and Activities
-       </Description>
-     </div>
-     <Posters.Images posters={posters.images} />
-   </div>
-   {admin ? <UploadPosters /> : null  }
- </Container>
-</div>
-}
+  return (
+    <div className="bg-[#FDFBF7]">
+      <Container pad>
+        <div>
+          <div className="text-center pb-4">
+            <Header>Stay informed about our programs</Header>
+            <Description>
+              Be the First to Know About Exciting Events and Activities
+            </Description>
+          </div>
+          <Posters.Images posters={posters.images} />
+        </div>
+        {admin ? <UploadPosters /> : null}
+      </Container>
+    </div>
+  );
+};
 
-const PImages = ({posters}: {posters: {src: string}[]}) => {
+const PImages = ({ posters }: { posters: { src: string }[] }) => {
   return (
     <div>
       {posters.length < 1 ? (
-        <div className="text-center font-bold">No recent sermon yet...</div>
+        <div className="text-center font-bold">No recent poster yet...</div>
       ) : (
         <>
           <DeskTop posters={posters} />
@@ -65,32 +65,37 @@ const PImages = ({posters}: {posters: {src: string}[]}) => {
 };
 Posters.Images = PImages;
 
-const DeskTop = ({posters}: {posters: {src: string}[]})=><div className="hidden md:flex flex-wrap justify-between">
-{posters.map((poster, index) => (
-  <div key={index} className="w-[30%] h-[450px] relative">
-    <Image
-      src={poster.src}
-      fill
-      alt=""
-      className="object-fit object-contain"
-    />
+const DeskTop = ({ posters }: { posters: { src: string }[] }) => (
+  <div className="hidden md:flex flex-wrap justify-between">
+    {posters.map((poster, index) => (
+      <div key={index} className="w-[30%] h-[450px] relative">
+        <Image
+          src={poster.src}
+          fill
+          alt=""
+          className="object-fit object-contain"
+        />
+      </div>
+    ))}
   </div>
-))}
-</div>
+);
 
-const Mobile = ({posters}: {posters: {src: string}[]})=> {
-  return <div className="_34sdf max-w-[100rem] md:hidden pt-4">
+const Mobile = ({ posters }: { posters: { src: string }[] }) => {
+  return (
+    <div className="_34sdf max-w-[100rem] md:hidden pt-4">
       <AliceCarousel
         items={posters.map((poster, index) => (
           <Card src={poster.src} key={index} />
         ))}
       />
     </div>
-}
+  );
+};
 
-const Card = ({src}: {src: string})=> <div className='relative h-96 w-full'>
-   <Image src={src} alt='' fill className='object-fit object-center' />
-</div>
-
+const Card = ({ src }: { src: string }) => (
+  <div className="relative h-96 w-full">
+    <Image src={src} alt="" fill className="object-fit object-center" />
+  </div>
+);
 
 export default Posters;
