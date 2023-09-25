@@ -12,7 +12,7 @@ const sources = [
 ];
 
 const Banner = ()=> {
-    return <div className="_34sdf max-w-[100rem]">
+    return <div className="_34sdf max-w-[120rem] mx-auto">
         <Banner.Carousel
           items={[
             <Card  key='1'/>,

@@ -67,8 +67,8 @@ export const Services = async () => {
             {events.length < 1 ? (
               <p>No Recent Events</p>
             ) : (
-              <div className="flex flex-col items-start w-fit">
-                <div className="flex gap-16">
+              <div className="flex flex-col items-start w-fit max-md:gap-10 max-md:items-center">
+                <div className="flex gap-10 md:gap-16 max-md:items-center max-md:flex-col">
                   <div>
                     <Monday />
                     <Tuesday />
@@ -77,7 +77,7 @@ export const Services = async () => {
                   <Friday />
                   <Sunday />
                 </div>
-                <Tuesday />
+                <Thursday />
               </div>
             )}
           </div>
@@ -122,7 +122,28 @@ const Tuesday = () => (
     </div>
   </>
 );
+const Thursday = () => (
+  <>
+    <div className="mb-10 flex gap-2 flex-col items-center relative">
+      <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">
+        THURSDAY
+      </div>
+      <div className="text-lg md:text-xl pb-1 text-center">Noon Prayers</div>
+      <div className="text-xs">12pm - 12:30pm (prayer line)</div>
+      <Reminder
+        event={{
+          day: "Thursday",
+          title: "Noon Prayers",
+          time: "12pm - 12:30pm (prayer line)",
+        }}
+      />
+    </div>
+  </>
+);
 
+const EWrapper: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({children})=> <div className="flex flex-col items-center">
+  {children}
+</div>
 
 const Wednesday = () => (
   <>
@@ -131,20 +152,23 @@ const Wednesday = () => (
         Wednesday
       </div>
       <div className="flex flex-col gap-6">
-        <div className="">
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Noon Prayers
-          </div>
-          <div className="text-xs">12pm - 12:30pm (prayer line)</div>
-          <Reminder
-            event={{
-              day: "Wednesday",
-              title: "Noon Prayers",
-              time: "12pm - 12:30pm (prayer line)",
-            }}
-          />
-        </div>
-        <div>
+        <EWrapper>
+          <>
+            <div className="text-lg md:text-xl pb-1 text-center">
+              Noon Prayers
+            </div>
+            <div className="text-xs">12pm - 12:30pm (prayer line)</div>
+            <Reminder
+              event={{
+                day: "Wednesday",
+                title: "Noon Prayers",
+                time: "12pm - 12:30pm (prayer line)",
+              }}
+            />
+          </>
+        </EWrapper>
+        <EWrapper>
+          <>
           <div className="text-lg md:text-xl pb-1 text-center">Bible Study</div>
           <div className="text-xs">7pm - 8:30pm (Church Auditorium)</div>
           <Reminder
@@ -154,7 +178,8 @@ const Wednesday = () => (
               time: "7pm - 8:30pm (Church Auditorium)",
             }}
           />
-        </div>
+          </>
+        </EWrapper>
       </div>
     </div>
   </>
@@ -167,89 +192,89 @@ const Friday = () => (
         FRIDAY
       </div>
       <div className="flex flex-col gap-6">
-        <div className="">
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Noon Prayers
-          </div>
-          <div className="text-xs">12pm - 12:30pm (prayer line)</div>
-          <Reminder
-            event={{
-              day: "Friday",
-              title: "Noon Prayers",
-              time: "12pm - 12:30pm (prayer line)",
-            }}
-          />
-        </div>
-        <div>
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Overcomers night
-          </div>
-          <div className="text-xs">10:30pm - 2:30am (Last Friday of the Month)</div>
-          <Reminder
-            event={{
-              day: "Friday",
-              title: "Noon Prayers",
-              time: "7pm - 8:30pm (Church Auditorium)",
-            }}
-          />
-        </div>
+        <EWrapper>
+          <>
+            <div className="text-lg md:text-xl pb-1 text-center">
+              Noon Prayers
+            </div>
+            <div className="text-xs">12pm - 12:30pm (prayer line)</div>
+            <Reminder
+              event={{
+                day: "Friday",
+                title: "Noon Prayers",
+                time: "12pm - 12:30pm (prayer line)",
+              }}
+            />
+          </>
+        </EWrapper>
+        <EWrapper>
+          <>
+            <div className="text-lg md:text-xl pb-1 text-center">
+              Overcomers night
+            </div>
+            <div className="text-xs">
+              10:30pm - 2:30am (Last Friday of the Month)
+            </div>
+            <Reminder
+              event={{
+                day: "Friday",
+                title: "Noon Prayers",
+                time: "7pm - 8:30pm (Church Auditorium)",
+              }}
+            />
+          </>
+        </EWrapper>
       </div>
     </div>
   </>
 );
 
 const Sunday = () => (
-  <>
-    <div className="mb-10 flex gap-2 flex-col items-center relative">
-      <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">
-        SUNDAY
-      </div>
-      <div className="flex flex-col gap-6">
-        <div className="">
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Sunday School
-          </div>
-          <div className="text-xs">12pm - 12:30pm (prayer line)</div>
-          <Reminder
-            event={{
-              day: "Friday",
-              title: "Noon Prayers",
-              time: "12pm - 12:30pm (prayer line)",
-            }}
-          />
+  <div className="mb-10 flex gap-2 flex-col items-center relative">
+    <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">SUNDAY</div>
+    <EWrapper>
+      <>
+        <div className="text-lg md:text-xl pb-1 text-center">Sunday School</div>
+        <div className="text-xs">9:45am - 10:30am</div>
+        <Reminder
+          event={{
+            day: "Friday",
+            title: "Noon Prayers",
+            time: "9:45am - 10:30am",
+          }}
+        />
+      </>
+    </EWrapper>
+    <EWrapper>
+      <>
+        <div className="text-lg md:text-xl pb-1 text-center">
+          Celebration Service
         </div>
-        <div>
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Celebration Service
-          </div>
-          <div className="text-xs">
-            10:30pm - 2:30am (Last Friday of the Month)
-          </div>
-          <Reminder
-            event={{
-              day: "Friday",
-              title: "Noon Prayers",
-              time: "7pm - 8:30pm (Church Auditorium)",
-            }}
-          />
+        <div className="text-xs">10:30am - 12:30pm</div>
+        <Reminder
+          event={{
+            day: "Friday",
+            title: "Noon Prayers",
+            time: "10:30am - 12:30pm",
+          }}
+        />
+      </>
+    </EWrapper>
+    <EWrapper>
+      <>
+        <div className="text-lg md:text-xl pb-1 text-center">Power Service</div>
+        <div className="text-xs">
+          10:30am - 12:30pm (Last Friday of the Month)
         </div>
-        <div>
-          <div className="text-lg md:text-xl pb-1 text-center">
-            Power Service
-          </div>
-          <div className="text-xs">
-            10:30pm - 2:30am (Last Friday of the Month)
-          </div>
-          <Reminder
-            event={{
-              day: "Friday",
-              title: "Noon Prayers",
-              time: "7pm - 8:30pm (Church Auditorium)",
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  </>
+        <Reminder
+          event={{
+            day: "Sunday",
+            title: "Power Service",
+            time: "10:30am - 12:30pm (Church Auditorium)",
+          }}
+        />
+      </>
+    </EWrapper>
+  </div>
 );
 

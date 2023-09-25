@@ -31,7 +31,7 @@ export const LargeContainer: React.FC<
     <div
       className={twMerge(
         className,
-        clsx("max-w-[100rem] mx-auto", {
+        clsx("max-w-[120rem] mx-auto", {
           ["py-10 md:py-20"]: pad,
         })
       )}
