@@ -6,6 +6,7 @@ import { Reminder } from "./reminder";
 import { Header } from "../Header/header";
 import { Description } from "../Description";
 import { Section } from "../Section/section";
+import { twMerge } from "tailwind-merge";
 
 export type Event = {
   day: string,
@@ -74,10 +75,11 @@ export const Services = async () => {
                     <Tuesday />
                   </div>
                   <Wednesday />
+                  <Thursday className="md:hidden"/>
                   <Friday />
                   <Sunday />
                 </div>
-                <Thursday />
+                <Thursday className="max-md:hidden"/>
               </div>
             )}
           </div>
@@ -122,9 +124,9 @@ const Tuesday = () => (
     </div>
   </>
 );
-const Thursday = () => (
+const Thursday = ({className}: {className?: string}) => (
   <>
-    <div className="mb-10 flex gap-2 flex-col items-center relative">
+    <div className={twMerge("mb-10 flex gap-2 flex-col items-center relative", className)}>
       <div className="text-xl md:text-2xl font-semibold pb-2 md:pb-5">
         THURSDAY
       </div>
