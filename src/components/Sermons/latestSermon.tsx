@@ -30,9 +30,6 @@ const LatestSermo = () => {
   }, []);
   return (
     <div
-      style={{
-        backgroundColor: "#FDFAF7",
-      }}
     >
       <Container pad>
         <Section>
