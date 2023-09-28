@@ -14,7 +14,7 @@ export function LocateUs() {
             Where we are located
           </Header>
           <Description>
-            Be the First to Know About Exciting Events and Activities
+            Be the First to Know About Our Exciting Events and Activities
           </Description>
         </Section>
         <Map />
