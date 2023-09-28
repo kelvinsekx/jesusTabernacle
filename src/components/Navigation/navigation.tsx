@@ -33,8 +33,12 @@ export const Navigation = () => {
             />
           </div>
           <div>
-            <div className="text-[#28166F] font-semibold max-md:text-base">JESUS TABERNACLE</div>
-            <div className='text-xs text-red-600 font-semibold'>Hillsborough, Durham, N.C</div>
+            <div className="text-[#28166F] font-semibold max-md:text-base">
+              JESUS TABERNACLE
+            </div>
+            <div className="text-[10px]/[10px] md:text-xs text-red-600 font-semibold font-mono">
+              Hillsborough, Durham, N.C
+            </div>
           </div>
         </div>
         <div
