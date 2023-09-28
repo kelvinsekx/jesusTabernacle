@@ -7,6 +7,8 @@ import cloudinary from "./../../lib/cloudinary";
 import { Carousel as AliceCarousel } from "./banner";
 import { Description } from "../Description";
 
+
+
 const getPosters = async () => {
   let results = await cloudinary.v2.search
     .expression(`folder:jesusTabernacle/*`)
@@ -29,8 +31,6 @@ const getPosters = async () => {
 const Posters = async () => {
   const posters = await getPosters();
 
-  const admin = false;
-
   return (
     <div className="bg-[#FDFBF7]/10">
       <Container pad>
@@ -43,7 +43,7 @@ const Posters = async () => {
           </div>
           <Posters.Images posters={posters.images} />
         </div>
-        {admin ? <UploadPosters /> : null}
+        <UploadPosters /> 
       </Container>
     </div>
   );
