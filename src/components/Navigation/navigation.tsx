@@ -17,26 +17,47 @@ export const Navigation = () => {
   const toggleNavList = ()=>setMobileNavList((prevProps)=> !prevProps)
   return (
     <Container className="px-1 _h_auto">
-      <div className={clsx(
-        'flex md:gap-4',
-        "justify-between bg-white text-tb-black text-base items-center"
-      )}>
-          <div className="h-12 w-12 md:w-24 md:h-20 relative overflow-hidden">
-            <Image src={"/rccg_logo.png"} className='object-cover' fill alt="The Redeemed Church Logo" />
+      <div
+        className={clsx(
+          "flex md:gap-4",
+          "justify-between bg-white text-tb-black text-base items-center"
+        )}
+      >
+        <div className="h-12 md:h-16 w-fit flex items-center">
+          <div className="h-full w-12 md:w-24 relative overflow-hidden">
+            <Image
+              src={"/rccg_logo.png"}
+              className="object-contain"
+              fill
+              alt="The Redeemed Church Logo"
+            />
           </div>
-        <div className={clsx(
-          'flex items-center gap-2 h-12',
-          'md:flex-row',
-          'md:w-fit lg:h-20 '
-        )}>
-          <Navigation.NavList className="max-md:hidden"/>
-          {mobileNavList ? <Close toggle={toggleNavList} /> :  <Menu toggle={toggleNavList}/>}
+          <div>
+            <div className="text-[#28166F] font-semibold max-md:text-base">JESUS TABERNACLE</div>
+            <div className='text-xs text-red-600 font-semibold'>Hillsborough, Durham, N. Carolina</div>
+          </div>
+        </div>
+        <div
+          className={clsx(
+            "flex items-center gap-2 h-12",
+            "md:flex-row",
+            "md:w-fit lg:h-20 "
+          )}
+        >
+          <Navigation.NavList className="max-md:hidden" />
+          {mobileNavList ? (
+            <Close toggle={toggleNavList} />
+          ) : (
+            <Menu toggle={toggleNavList} />
+          )}
           <div className="h-full cursor-pointer px-4 max-lg:text-sm">
             <GiveDialog />
           </div>
         </div>
       </div>
-      {mobileNavList && <Navigation.NavList className="flex-col items-start md:hidden py-4"/>}
+      {mobileNavList && (
+        <Navigation.NavList className="flex-col items-start md:hidden py-4" />
+      )}
     </Container>
   );
 };
