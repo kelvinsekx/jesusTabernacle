@@ -32,12 +32,12 @@ export const Navigation = () => {
               alt="The Redeemed Church Logo"
             />
           </div>
-          <div>
+          <div className='pl-1 text-center'>
             <div className="text-[#28166F] font-semibold max-md:text-base">
               JESUS TABERNACLE
             </div>
             <div className="text-[10px]/[10px] md:text-xs text-red-600 font-semibold font-mono">
-              Hillsborough, Durham, N.C
+              ...Hillsborough,Durham,N.C
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const Navigation = () => {
           ) : (
             <Menu toggle={toggleNavList} />
           )}
-          <div className="h-full cursor-pointer px-4 max-lg:text-sm">
+          <div className="h-full cursor-pointer max-lg:text-sm">
             <GiveDialog />
           </div>
         </div>
