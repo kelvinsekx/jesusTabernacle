@@ -13,6 +13,8 @@ import { Separator } from "@/components/ui/separator"
 import { LargeContainer } from "../container";
 import { twMerge } from "tailwind-merge";
 
+import {Login } from './login'
+
 
 export const Footer = () => {
   return (
@@ -35,6 +37,7 @@ export const Footer = () => {
               </li>
             ))}
           </ul>
+          <Login />
           <Separator className="md:hidden my-6" />
         </Footer.Section>
         <Footer.Section className=" max-sm:text-left text-center lg:text-left">

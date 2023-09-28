@@ -1,8 +1,12 @@
 'use client'
 
 import { CldUploadWidget } from 'next-cloudinary';
- 
-const UploadPosters = ()=> <CldUploadWidget uploadPreset="tb_test">
+ import { useAuth } from "@/lib/authContext";
+
+const UploadPosters = ()=> {
+  const { loggedIn } = useAuth();
+  if(!loggedIn) return null
+return <CldUploadWidget uploadPreset="tb_test">
 {({ open }) => {
   function handleOnClick(e) {
     e.preventDefault();
@@ -15,5 +19,6 @@ const UploadPosters = ()=> <CldUploadWidget uploadPreset="tb_test">
   );
 }}
 </CldUploadWidget>
+}
 
 export default UploadPosters
