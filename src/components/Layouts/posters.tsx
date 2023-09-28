@@ -32,7 +32,7 @@ const Posters = async () => {
   const admin = false;
 
   return (
-    <div className="bg-[#FDFBF7]">
+    <div className="bg-[#FDFBF7]/10">
       <Container pad>
         <div>
           <div className="text-center pb-4">

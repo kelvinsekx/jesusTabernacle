@@ -49,7 +49,7 @@ export async function Gallery() {
   const sources = images.slice(0, 5)
   const sources2 = images.slice(5)
   return (
-    <div className="bg-[#EAF2F6]">
+    <div className="bg-[#EAF2F6]/10">
       <Container pad>
         <Section>
           <Header>Our Gallery</Header>
