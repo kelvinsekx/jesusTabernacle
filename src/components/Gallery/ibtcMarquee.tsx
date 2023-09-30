@@ -96,7 +96,7 @@ export function IBTCMarquee({
         className={`w-full py-6 lg:py-12 whitespace-nowrap flex flex-row ${
           reverse
             ? "animate-marqueeReverse lg:animate-large-marqueeReverse"
-            : "animate-marquee lg:animate-large-marquee"
+            : "animate-marquee lg:animate-large-marquee 2xl:animate-xlarge-marquee"
         }`}
         style={{
           animationPlayState: shouldPlay ? "running" : "paused",
@@ -109,7 +109,7 @@ export function IBTCMarquee({
         className={`w-full absolute top-0 py-6 lg:py-12 whitespace-nowrap flex flex-row ${
           reverse
             ? "animate-marqueeReverse2 lg:animate-large-marqueeReverse2"
-            : "animate-marquee2 lg:animate-large-marquee2"
+            : "animate-marquee2 lg:animate-large-marquee2 2xl:animate-xlarge-marquee2"
         }`}
         style={{
           animationPlayState: shouldPlay ? "running" : "paused",
