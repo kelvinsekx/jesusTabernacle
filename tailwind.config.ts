@@ -8,11 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
         "4.5xl": [
@@ -79,7 +78,7 @@ const config: Config = {
       spacing: {
         "17.5": "68px",
       },
-      
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -94,6 +93,11 @@ const config: Config = {
         "large-marquee2": "large-marquee2 70s linear infinite",
         "large-marqueeReverse": "large-marquee 72s reverse infinite",
         "large-marqueeReverse2": "large-marquee2 72s reverse infinite",
+
+        "xlarge-marquee": "xlarge-marquee 70s linear infinite",
+        "xlarge-marquee2": "xlarge-marquee2 70s linear infinite",
+        "xlarge-marqueeReverse": "xlarge-marquee 72s reverse infinite",
+        "xlarge-marqueeReverse2": "xlarge-marquee2 72s reverse infinite",
       },
       keyframes: {
         shimmer: {
@@ -102,12 +106,12 @@ const config: Config = {
           },
         },
         "accordion-down": {
-          from: { height: '0' },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: '0' },
+          to: { height: "0" },
         },
         strok: {
           "100%": {
@@ -125,10 +129,10 @@ const config: Config = {
         },
         "large-marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-140%)" },
+          "100%": { transform: "translateX(-130%)" },
         },
         "large-marquee2": {
-          "0%": { transform: "translateX(140%)" },
+          "0%": { transform: "translateX(130%)" },
           "100%": { transform: "translateX(0%)" },
         },
         "xlarge-marquee": {
@@ -139,10 +143,9 @@ const config: Config = {
           "0%": { transform: "translateX(110%)" },
           "100%": { transform: "translateX(0%)" },
         },
-        
-      }
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")]
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
