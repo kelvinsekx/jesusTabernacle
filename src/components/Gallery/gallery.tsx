@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IBTCMarquee } from "./ibtcMarquee";
-import { Container, LargeContainer } from "../container";
+import { Container } from "../container";
 import { Header } from "../Header/header";
 import { Description } from "../Description";
 import { Section } from "../Section/section";
@@ -58,10 +58,9 @@ export async function Gallery() {
           </Description>
         </Section>
       </Container>
-      <LargeContainer>
         <IBTCMarquee images={sources}></IBTCMarquee>
         <IBTCMarquee images={sources2} reverse></IBTCMarquee>
-      </LargeContainer>
+
     </div>
   );
 }
