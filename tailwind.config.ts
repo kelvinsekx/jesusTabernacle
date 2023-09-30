@@ -129,18 +129,18 @@ const config: Config = {
         },
         "large-marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-130%)" },
+          "100%": { transform: "translateX(-133%)" },
         },
         "large-marquee2": {
-          "0%": { transform: "translateX(130%)" },
+          "0%": { transform: "translateX(133%)" },
           "100%": { transform: "translateX(0%)" },
         },
         "xlarge-marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-120%)" },
+          "100%": { transform: "translateX(-130%)" },
         },
         "xlarge-marquee2": {
-          "0%": { transform: "translateX(120%)" },
+          "0%": { transform: "translateX(130%)" },
           "100%": { transform: "translateX(0%)" },
         },
       },

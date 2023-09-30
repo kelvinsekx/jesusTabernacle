@@ -14,7 +14,7 @@ const WTC = () => {
 };
 
 const ImageGrid = () => (
-  <div className="flex w-2/4 h-[22rem] lg:h-[30rem] gap-4 max-md:hidden">
+  <div className="flex w-2/4 h-[22rem] lg:h-[30rem] xl:h-[35rem] gap-4 max-md:hidden">
     <div className="w-1/2 relative h-full overflow-hidden">
       <Image
         fill
