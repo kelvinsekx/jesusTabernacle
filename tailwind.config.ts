@@ -137,10 +137,10 @@ const config: Config = {
         },
         "xlarge-marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-110%)" },
+          "100%": { transform: "translateX(-120%)" },
         },
         "xlarge-marquee2": {
-          "0%": { transform: "translateX(110%)" },
+          "0%": { transform: "translateX(120%)" },
           "100%": { transform: "translateX(0%)" },
         },
       },
