@@ -2,7 +2,7 @@
 import * as React from 'react'
 import Image from "next/image";
 import Link from 'next/link'
-import { Container } from "@/components/container";
+import { LargeContainer } from "@/components/container";
 import { GiveDialog } from "../GiveDialog/dialog";
 import { Menu, Close } from "./Menu";
 
@@ -16,7 +16,7 @@ export const Navigation = () => {
 
   const toggleNavList = ()=>setMobileNavList((prevProps)=> !prevProps)
   return (
-    <Container className="px-1 _h_auto">
+    <LargeContainer className="px-1 _h_auto">
       <div
         className={clsx(
           "flex md:gap-4",
@@ -62,7 +62,7 @@ export const Navigation = () => {
       {mobileNavList && (
         <Navigation.NavList className="flex-col items-start md:hidden py-4" />
       )}
-    </Container>
+    </LargeContainer>
   );
 };
 

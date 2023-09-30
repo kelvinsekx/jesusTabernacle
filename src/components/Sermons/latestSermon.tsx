@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Container } from "@/components/container";
+import { LargeContainer } from "@/components/container";
 import { ListSermon } from "../ListSermon/listSermon";
 
 
@@ -31,7 +31,7 @@ const LatestSermo = () => {
   return (
     <div
     >
-      <Container pad>
+      <LargeContainer pad>
         <Section>
           <Header>Latest Sermon</Header>
           <Description>
@@ -41,7 +41,7 @@ const LatestSermo = () => {
           </Description>
         </Section>
         {sermons.length < 1 ? <div className='text-center font-bold'>No recent sermon yet...</div> : <ListSermon sermons={sermons} />}
-      </Container>
+      </LargeContainer>
     </div>
   );
 };

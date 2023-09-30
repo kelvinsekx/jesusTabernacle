@@ -1,15 +1,15 @@
 import Image from "next/image";
-import { Container } from "../container";
+import { LargeContainer } from "../container";
 import { Header } from "../Header/header";
 
 const WTC = () => {
   return (
-    <Container pad>
+    <LargeContainer pad>
       <div className="flex justify-between">
         <WTC.ImgGrid />
         <WTC.Content />
       </div>
-    </Container>
+    </LargeContainer>
   );
 };
 
@@ -33,7 +33,7 @@ const ImageGrid = () => (
           src={
             "https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/pastor_samari_and_first_lady_turdlo"
           }
-          className="object-fit rounded"
+          className="object-cover rounded"
         />
       </div>
       <div className="w-full relative h-1/2 overflow-hidden">
