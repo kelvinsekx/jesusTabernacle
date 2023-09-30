@@ -125,10 +125,10 @@ const config: Config = {
         },
         "large-marquee": {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-140%)" },
+          "100%": { transform: "translateX(-120%)" },
         },
         "large-marquee2": {
-          "0%": { transform: "translateX(140%)" },
+          "0%": { transform: "translateX(120%)" },
           "100%": { transform: "translateX(0%)" },
         },
         
