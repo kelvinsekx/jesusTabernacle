@@ -1,7 +1,7 @@
 'use client'
 import * as React from 'react'
 import { Header } from '@/components/Header/header'
-import {Container} from '@/components/container'
+import { LargeContainer } from "@/components/container";
 
 
 const LiveService = ()=> {
@@ -30,7 +30,7 @@ const LiveService = ()=> {
           clearInterval(interval);
         };
       }, []);
-    return <Container pad>
+    return <LargeContainer pad>
         <div className='flex flex-col md:items-center'>
             <Header className='max-md:w-[80%]'>Jesus Tabernacle Live Broadcast</Header>
                 <div className='w-full md:w-[60%] h-[20rem] lg:h-[37.5rem] flex justify-center items-center bg-gradient-to-br from-green-500 to-indigo-800 rounded-md text-6xl md:text-9xl text-white'>
@@ -90,7 +90,7 @@ const LiveService = ()=> {
                     </div>
                 </div>
         </div>
-    </Container>
+    </LargeContainer>
 }
 
 export default  LiveService
