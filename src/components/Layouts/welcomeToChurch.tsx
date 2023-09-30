@@ -4,7 +4,7 @@ import { Header } from "../Header/header";
 
 const WTC = () => {
   return (
-    <LargeContainer pad>
+    <LargeContainer pad className="px-2 md:px-4">
       <div className="flex justify-between">
         <WTC.ImgGrid />
         <WTC.Content />
