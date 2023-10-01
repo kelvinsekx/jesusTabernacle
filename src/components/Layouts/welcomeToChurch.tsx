@@ -53,7 +53,7 @@ WTC.ImgGrid = ImageGrid;
 
 const Content = () => (
   <section className="w-full md:w-2/5 flex flex-col gap-2">
-    <Header>Welcome to church</Header>
+    <Header>Welcome to Church</Header>
     <p>
       {`Jesus Tabernacle Durham is a mission branch of the Redeemed Christian Church of God, North America with a vision to preach God's Word to the ends of the earth. We are a diverse, close-knit, and inclusive community that places a great emphasis on love and family values.`}
     </p>
