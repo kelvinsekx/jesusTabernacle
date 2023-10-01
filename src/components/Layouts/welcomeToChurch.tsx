@@ -41,7 +41,7 @@ const ImageGrid = () => (
           fill
           alt=""
           src={
-            "https://res.cloudinary.com/joi-de-vivro/image/upload/v1695441008/samples/beautiful_members_of_redeemed_church_jesus_tabernacle_mxqb5x"
+            "https://res.cloudinary.com/joi-de-vivro/image/upload/v1696143063/samples/jesus_tabernacle_church_congregation_zf9cn5"
           }
           className="object-cover rounded"
         />
@@ -55,11 +55,13 @@ const Content = () => (
   <section className="w-full md:w-2/5 flex flex-col gap-2">
     <Header>Welcome to church</Header>
     <p>
-      {`This is the Redeemed Christian Church of God, Jesus Tabernacle, Durham. We
-know God will meet with you at the point of your needs, we hope you have
-come to him with an open heart and faith because He will give you a
-testimony in Jesus name, Amen. Enjoy the service.`}
+      {`Jesus Tabernacle Durham is a mission branch of the Redeemed Christian Church of God, North America with a vision to preach God's Word to the ends of the earth. We are a diverse, close-knit, and inclusive community that places a great emphasis on love and family values.`}
     </p>
+    <p>
+      {`Our church is firmly rooted in our faith in the Bible, both in belief and practice. Also, our teachings and missionary efforts are dedicated to promoting righteous conduct and moral integrity among various geographical regions, different life stages, and varying levels of spiritual growth, emphasizing the pursuit of holiness in our lives.`}
+    </p>
+    <p>{`We have strong faith in the power of prayer and that our God answers prayers. This is why our church is known as the "Solution Center" (Psalm 121 vs 1-2).`}</p>
+    <p>{`As a church, our primary goal is to make heaven.`}</p>
   </section>
 );
 WTC.Content = Content;
