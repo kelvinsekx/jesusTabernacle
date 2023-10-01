@@ -40,20 +40,6 @@ export function GiveDialog() {
         </DialogHeader>
         <div className="flex flex-col gap-4 text-tb-ash text-base">
           <div>
-            <div className="pb-4">What would you like to give for?</div>
-            <div className="flex gap-4">
-              <GiveDialog.Label>
-                <Description>Offering</Description>
-              </GiveDialog.Label>
-              <GiveDialog.Label>
-                <Description>Tithe</Description>
-              </GiveDialog.Label>
-              <GiveDialog.Label>
-                <Description>Others</Description>
-              </GiveDialog.Label>
-            </div>
-          </div>
-          <div>
             <div className="pb-4">Select payment method:</div>
             <div className="flex flex-col md:flex-row gap-4">
               <AccountCard
@@ -68,7 +54,8 @@ export function GiveDialog() {
                 onClick={() => setAcc(1)}
               ></AccountCard>
               <AccountCard
-                name="Card"
+                name="Paypal"
+                src="/paypal-logo.webp"
                 active={acc == 2}
                 onClick={() => setAcc(2)}
               ></AccountCard>

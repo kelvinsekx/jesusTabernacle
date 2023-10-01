@@ -14,13 +14,13 @@ const WTC = () => {
 };
 
 const ImageGrid = () => (
-  <div className="flex w-2/4 h-[22rem] lg:h-[30rem] xl:h-[35rem] gap-4 max-md:hidden">
+  <div className="flex w-[55%] h-[22rem] lg:h-[30rem] xl:h-[35rem] gap-4 max-md:hidden">
     <div className="w-1/2 relative h-full overflow-hidden">
       <Image
         fill
         alt=""
         src={
-          "https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/members_of_Jesus_tabernacle_having_a_fun_time_bnjolw"
+          "https://res.cloudinary.com/joi-de-vivro/image/upload/q_80,f_auto,fl_lossy,w_auto,c_scale/v1696166177/samples/Parish_Pastor_qzkvtw"
         }
         className="object-cover rounded"
       />
@@ -31,7 +31,7 @@ const ImageGrid = () => (
           fill
           alt=""
           src={
-            "https://res.cloudinary.com/joi-de-vivro/image/upload/q_50,f_auto,fl_lossy,w_auto,c_scale/v1694633896/pastor_samari_and_first_lady_turdlo"
+            "https://res.cloudinary.com/joi-de-vivro/image/upload/q_80,f_auto,fl_lossy,w_auto,c_scale/v1694633896/pastor_samari_and_first_lady_turdlo"
           }
           className="object-cover rounded"
         />
