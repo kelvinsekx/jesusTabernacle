@@ -41,7 +41,7 @@ const Card = ()=> <CardContent>
   <div className='text-white absolute top-[20%] md:top-[5%] xl:top-[20%] left-1/2 -translate-x-1/2 w-full md:w-[80%] text-center gap-4 '>
     <div className='flex flex-col items-center'>
       <span className='text-4xl  md:text-7xl lg:text-8xl'>SUNDAY WORSHIP SERVICE</span> 
-      <CardFoot>{`9am - 12pm`.toUpperCase()}</CardFoot>
+      <CardFoot>{`10:30am - 12:30pm`.toUpperCase()}</CardFoot>
     </div>
   </div>
 </CardContent>
