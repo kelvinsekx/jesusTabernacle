@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dialog"
 import { CheckIcon } from "lucide-react"
 import React from "react"
-import { Description } from "../Description"
 
 import Image from 'next/image'
 import clsx from "clsx"
@@ -71,7 +70,7 @@ export function GiveDialog() {
         </div>
 
         <DialogFooter>
-          <Button>God bless you...</Button>
+          <Button className="">God bless you...</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
