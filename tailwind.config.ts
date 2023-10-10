@@ -14,13 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        "4.5xl": [
-          "2.5rem",
-          {
-            letterSpacing: "-0.01em",
-            fontWeight: "500",
-          },
-        ],
+        "4.5xl": "2.5rem",
       },
       width: {
         "38": "9.375rem",
@@ -98,12 +92,14 @@ const config: Config = {
         "xlarge-marquee2": "xlarge-marquee2 70s linear infinite",
         "xlarge-marqueeReverse": "xlarge-marquee 72s reverse infinite",
         "xlarge-marqueeReverse2": "xlarge-marquee2 72s reverse infinite",
+
+        "rotating-words-tb": "rotating-words-tb 8s infinite",
       },
       keyframes: {
-        shimmer: {
-          "100%": {
-            transform: "translateX(100%)",
-          },
+        "rotating-words-tb": {
+          "0%": { transform: "translateY(-67%)" },
+          "50%": { transform: "translateY(-33%)" },
+          "100%": { transform: "translateY(0%)" },
         },
         "accordion-down": {
           from: { height: "0" },
