@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LargeContainer } from "../container";
-import { Header } from "../Header/header";
+
+import {RotatingTitles} from './rotatingTitle'
 
 const WTC = () => {
   return (
@@ -51,31 +52,21 @@ const ImageGrid = () => (
 );
 WTC.ImgGrid = ImageGrid;
 
-const Content = () => (
-  <section className="w-full md:w-2/5 flex flex-col gap-2">
-    <Header>
-      Welcome to{" "}
-      <span className="text-gray-500 relative overflow-y-hidden inline-flex">
-        <span className=" select-none text-transparent" aria-hidden>
-          Tabernacle
-        </span>
-        <span className="absolute top-0 left-0 animate-rotating-words-tb">
-          <span className="block">Church</span>
-          <span className="block">Tabernacle</span>
-          <span className="block">Home</span>
-        </span>
-      </span>
-    </Header>
-    <p>
-      {`Jesus Tabernacle Durham is a mission branch of the Redeemed Christian Church of God, North America with a vision to preach God's Word to the ends of the earth. We are a diverse, close-knit, and inclusive community that places a great emphasis on love and family values.`}
-    </p>
-    <p>
-      {`Our church is firmly rooted in our faith in the Bible, both in belief and practice. Also, our teachings and missionary efforts are dedicated to promoting righteous conduct and moral integrity among various geographical regions, different life stages, and varying levels of spiritual growth, emphasizing the pursuit of holiness in our lives.`}
-    </p>
-    <p>{`We have strong faith in the power of prayer and that our God answers prayers. This is why our church is known as the "Solution Center" (Psalm 121 vs 1-2).`}</p>
-    <p>{`As a church, our primary goal is to make heaven.`}</p>
-  </section>
-);
+const Content = () => {
+  return (
+    <section className="w-full md:w-2/5 flex flex-col gap-2">
+      <RotatingTitles />
+      <p>
+        {`Jesus Tabernacle Durham is a mission branch of the Redeemed Christian Church of God, North America with a vision to preach God's Word to the ends of the earth. We are a diverse, close-knit, and inclusive community that places a great emphasis on love and family values.`}
+      </p>
+      <p>
+        {`Our church is firmly rooted in our faith in the Bible, both in belief and practice. Also, our teachings and missionary efforts are dedicated to promoting righteous conduct and moral integrity among various geographical regions, different life stages, and varying levels of spiritual growth, emphasizing the pursuit of holiness in our lives.`}
+      </p>
+      <p>{`We have strong faith in the power of prayer and that our God answers prayers. This is why our church is known as the "Solution Center" (Psalm 121 vs 1-2).`}</p>
+      <p>{`As a church, our primary goal is to make heaven.`}</p>
+    </section>  
+  )
+};
 WTC.Content = Content;
 
 export default WTC;
