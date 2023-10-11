@@ -97,8 +97,9 @@ const config: Config = {
       },
       keyframes: {
         "rotating-words-tb": {
-          "0%": { transform: "translateY(-67%)" },
-          "50%": { transform: "translateY(-33%)" },
+          "0%": { transform: "translateY(-75%)" },
+          "33%": { transform: "translateY(-50%)" },
+          "67%": { transform: "translateY(-25%)" },
           "100%": { transform: "translateY(0%)" },
         },
         "accordion-down": {
