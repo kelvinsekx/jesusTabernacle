@@ -32,9 +32,9 @@ const formSchema = z.object({
 const UploadPosters = () => {
   const [servering, setServering] = React.useState(false);
   const [error, setError] = React.useState(false);
-  const [success, setSuccess] = React.useState(false)
+  const [success, setSuccess] = React.useState(false);
   const router = useRouter();
-//  const { toast } = useToast();
+  //  const { toast } = useToast();
   const { loggedIn } = useAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -51,7 +51,7 @@ const UploadPosters = () => {
       data.append(key, value);
     });
 
-    setError(null)
+    setError(false);
     try {
       setServering(true);
       const res = await axios.post(
@@ -60,7 +60,7 @@ const UploadPosters = () => {
       );
       setSuccess(true);
     } catch (err) {
-      console.log(err.response.data.message, err.message)
+      console.log(err.response.data.message, err.message);
       const new_error = err.response.data.message || err.message;
       setError(new_error);
     }
@@ -98,10 +98,14 @@ const UploadPosters = () => {
         />
 
         {error && (
-          <p className="text-red-400 border-2 border-red-400 py-4">Opps, {error}.</p>
-        )} 
+          <p className="text-red-400 border-2 border-red-400 py-4">
+            Opps, {error}.
+          </p>
+        )}
         {success && (
-          <p className="text-teal-500 border-2 border-teal-500 py-4">Image upload successful, kindly reload this page.</p>
+          <p className="text-teal-500 border-2 border-teal-500 py-4">
+            Image upload successful, kindly reload this page.
+          </p>
         )}
         <div className="flex justify-end">
           <Button type="submit">{servering ? "..." : "Create"}</Button>
