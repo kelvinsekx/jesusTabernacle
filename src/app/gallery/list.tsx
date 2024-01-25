@@ -40,7 +40,7 @@ const GalleryList = React.memo(({images}: {images: ImageProps[] | undefined})=> 
                     style={{ transform: 'translate3d(0, 0, 0)' }}
                     placeholder="blur"
                     blurDataURL={blurDataUrl}
-                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720,q_70,fl_lossy,f_auto/${public_id}.${format}`}
                     width={720}
                     height={480}
                     sizes="(max-width: 640px) 100vw,

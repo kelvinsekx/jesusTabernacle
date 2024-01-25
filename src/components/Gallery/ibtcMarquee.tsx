@@ -148,9 +148,9 @@ const CommunityImages = memo(function Images({
             <img
               loading={isLazy ? "lazy" : "eager"}
               sizes="(min-width: 30em) 28em, 100vw"
-              srcSet={getSrcSets(`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`)}
+              srcSet={getSrcSets(`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720,q_70,f_auto,fl_lossy/${public_id}.${format}`)}
               alt={"alt"}
-              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+              src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720,q_70,f_auto,fl_lossy/${public_id}.${format}`}
               className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-ibtc-blue-10"
             />
           </div>

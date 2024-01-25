@@ -13,6 +13,7 @@ const getPosters = async () => {
   let results = await cloudinary.v2.search
     .expression(`folder:jesusTabernacle/*`)
     .max_results(3)
+    .sort_by("created_at", "desc")
     .execute();
 
   let reducedResults: { src: string }[] = [];

@@ -67,7 +67,7 @@ export const Footer = () => {
           </p>
           <p>
             <span className="text-sm">Email: </span>
-            rccgnajesustabernacle@gmail.com
+            rccgna.jesustabernacle@gmail.com
           </p>
         </Footer.Section>
       </LargeContainer>
